@@ -1,0 +1,43 @@
+<h1>Sdaw-tv Main Page</h1>
+
+
+<p>Player goes here :</p>
+
+<div>
+  <object id="player" data="player.swf" type="application/x-shockwave-flash"
+          width="480" height="385">
+    <param name="source" value="player.swf"></param>
+    <param name="allowFullscreen" value="true"></param>
+    <param name="allowScriptAccess" value="always" />
+    <p>Macromedia Flash Player 8 is required in order to use this site</p>
+  </object>
+</div>
+
+<div id="txt">here</div>
+<input id="button" type="submit" />
+
+
+<br/><br/><br/>
+
+<p>This is temporary :</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+  </tr>
+
+<% @videos.each do |video| %>
+  <tr>
+    <td><%=h video.title %></td>
+    <td><%=h video.url %></td>
+    <td><%= link_to 'Show', video %></td>
+    <td><%= link_to 'Edit', edit_video_path(video) %></td>
+    <td><%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New video', new_video_path %>
