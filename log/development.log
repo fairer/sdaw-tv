@@ -1,0 +1,2706 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: SHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: SHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (33.8ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (41.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideos (20100408020522)
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE `videos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (21.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100408020522')[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mSHOW FIELDS FROM `videos`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `videos`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW KEYS FROM `videos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideos (20100408020522)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW FIELDS FROM `videos`[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mdescribe `videos`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `videos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVideos (20100408020522)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW FIELDS FROM `videos`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mdescribe `videos`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW KEYS FROM `videos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 03:47:04) [GET]
+  [4;36;1mVideo Load (1.3ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 1893ms (View: 1885, DB: 1) | 200 OK [http://localhost/videos]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 03:51:46) [GET]
+  [4;36;1mVideo Load (1.3ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 75ms (View: 70, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (190.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (60.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:05:24) [GET]
+  [4;36;1mVideo Load (170.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 350ms (View: 170, DB: 420) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:05:26) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 10ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:05:26) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:05:26) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:06:33) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:06:34) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:06:56) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:06:56) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:08:13) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:08:14) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:09:05) [GET]
+  [4;35;1mVideo Load (1.2ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 50ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:09:06) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:10:23) [GET]
+  [4;36;1mVideo Load (1.3ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 5, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (6.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:10:25) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:10:39) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:10:39) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:10:56) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 3, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:10:56) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:11:10) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:13:18) [GET]
+  [4;35;1mVideo Load (1.2ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:13:20) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#show to flv (for 127.0.0.1 at 2010-04-08 17:13:20) [GET]
+  Parameters: {"id"=>"barsandbones"}
+  [4;36;1mVideo Columns (71.3ms)[0m   [0;1mSHOW FIELDS FROM `videos`[0m
+  [4;35;1mVideo Load (13.7ms)[0m   [0mSELECT * FROM `videos` WHERE (`videos`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Video with ID=barsandbones):
+  app/controllers/videos_controller.rb:16:in `show'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (70.0ms)
+Rendered rescues/_request_and_response (17.5ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:13:39) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:13:39) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#show to flv (for 127.0.0.1 at 2010-04-08 17:13:39) [GET]
+  Parameters: {"id"=>"barsandtones"}
+  [4;35;1mVideo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `videos`[0m
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` WHERE (`videos`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Video with ID=barsandtones):
+  app/controllers/videos_controller.rb:16:in `show'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:13:58) [GET]
+  [4;35;1mVideo Load (1.2ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:13:58) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:14:09) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:14:09) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:14:16) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:14:16) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:14:21) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 3, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:14:21) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:14:24) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 4, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:14:24) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:16:00) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:16:01) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:17:15) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:17:16) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:17:19) [GET]
+  [4;36;1mVideo Load (1.3ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:17:20) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:17:34) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:17:34) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:18:02) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:18:02) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:18:41) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 1, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:18:42) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:18:49) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:18:49) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:19:01) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:19:01) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:22:10) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:22:11) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:22:46) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:22:47) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#show to flv (for 127.0.0.1 at 2010-04-08 17:22:49) [GET]
+  Parameters: {"id"=>"barandtone"}
+  [4;36;1mVideo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `videos`[0m
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` WHERE (`videos`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Video with ID=barandtone):
+  app/controllers/videos_controller.rb:16:in `show'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:22:58) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:22:58) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:23:05) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:23:05) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:23:10) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:23:10) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:23:12) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:23:12) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:23:15) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:23:15) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:23:17) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:23:18) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:23:20) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 3, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:23:20) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:23:31) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 4, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:23:31) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:24:07) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 10ms (View: 3, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:24:08) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:27:32) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:27:33) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:27:37) [GET]
+  [4;36;1mVideo Load (1.2ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:27:38) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:27:39) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:27:39) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:27:48) [GET]
+  [4;36;1mVideo Load (1.3ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:27:48) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:28:26) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:28:27) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:28:37) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:28:37) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:30:46) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:30:48) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:30:55) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:30:55) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:31:02) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 2, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:31:02) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:31:07) [GET]
+  [4;36;1mVideo Load (1.2ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:31:07) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:31:12) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:31:12) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:32:16) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:32:17) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:32:36) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:32:37) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:33:38) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:33:39) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototypeplayer.js" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:33:39) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:34:22) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:34:23) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:34:30) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:34:30) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:35:00) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:35:02) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:35:04) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 15ms (View: 5, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:35:04) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:35:13) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 22ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:35:13) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:35:23) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 20ms (View: 8, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:35:24) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:35:29) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:35:29) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:36:42) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:36:43) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:37:02) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:37:02) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:38:44) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 8ms (View: 3, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:38:45) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:38:50) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:38:50) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:39:35) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:39:36) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:39:41) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:39:41) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:40:37) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:40:38) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:40:54) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:40:55) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:40:59) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:40:59) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:43:04) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:43:05) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:43:07) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:43:08) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:43:19) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:43:19) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:43:22) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:43:22) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:43:50) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:43:51) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:43:55) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:43:55) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:44:31) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:44:32) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:44:36) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:44:36) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:45:50) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:45:52) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:45:54) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:45:56) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:46:12) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:46:13) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:46:19) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:46:20) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:46:31) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 11ms (View: 4, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:46:31) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:47:04) [GET]
+  [4;36;1mVideo Load (1.3ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:47:05) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:47:29) [GET]
+  [4;35;1mVideo Load (1.3ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 3, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:47:30) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:47:40) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:47:41) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:48:11) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 4, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:48:11) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:48:28) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 13ms (View: 5, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:48:29) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:48:38) [GET]
+  [4;35;1mVideo Load (1.2ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:48:39) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:48:54) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:48:54) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:48:59) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 5, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:48:59) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:49:01) [GET]
+  [4;36;1mVideo Load (0.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:49:01) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:49:09) [GET]
+  [4;35;1mVideo Load (1.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 12ms (View: 4, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:49:10) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:49:13) [GET]
+  [4;36;1mVideo Load (1.0ms)[0m   [0;1mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 9ms (View: 3, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:49:13) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing VideosController#index (for 127.0.0.1 at 2010-04-08 17:49:31) [GET]
+  [4;35;1mVideo Load (0.0ms)[0m   [0mSELECT * FROM `videos` [0m
+Rendering template within layouts/videos
+Rendering videos/index
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-08 17:49:32) [GET]
+
+ActionController::RoutingError (No route matches "/aytmt.flv" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
