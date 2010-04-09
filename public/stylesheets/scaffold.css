@@ -1,54 +1,144 @@
-body { background-color: #fff; color: #333; }
-
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+body
+{
+	width: 994px;
+	margin: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: rgb(255,233,160);
+	background-image: url("background.png");
+	background-attachment: fixed;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+a
+{
+	text-decoration: none;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
-
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+a:hover
+{
+	text-decoration: underline;
 }
 
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+a:focus
+{
+	color: purple;
 }
 
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
+#header
+{
+	width: 994px;
+	height: 100px;
 }
 
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
+#upper_right
+{
+	width: 250px:
+	float: right;
+	padding: 6px;
+	width: 250px;
+	height: 40px;
 }
 
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
+#upper_left
+{
+	width: 744px;
 }
 
+#title
+{
+	text-align: center;
+}
+
+#search_tool
+{
+	float: right;
+	width: 250px;
+	height: 40px;
+	font-size: 1.4em;
+	
+}
+
+#breaking_news
+{
+	padding-left: 4px;
+}
+
+#breaking_news_title
+{
+	color: rgb(200,20,30);
+	font-size: 1.8em;
+	font-family: Trebuchet MS, serif;
+	text-decoration: underline;
+}
+
+#breaking_news_text
+{
+	font-size: 1.6em;
+	font-family: Arial, Courier News, serif;
+	overflow: hidden;
+}
+
+#past_news
+{
+	margin-top: 4px;
+	padding-left: 20px;
+}
+
+#past_news_text
+{
+	font-size: 1.2em;
+}
+
+#right_up
+{
+	width: 600px;
+	float: right;
+	margin: right;
+	margin-right: 20px;
+	padding: 0px;
+}
+
+#right_bot
+{
+	float: right;
+	width: 600px;
+	padding: 20px;
+	margin-top: 40px;
+}
+
+#left
+{
+	width: 394px;
+}
+
+#left_up
+{
+	margin-top: 80px;
+	margin-bottom: 30px;
+	margin-left: 10px;
+	font-size: 1.6em;
+}
+
+#left_bot
+{
+	padding-left: 40px;
+	padding-top: 40px;
+}
+
+#left_bot2
+{
+	padding-left: 25px;
+	padding-top: 20px;
+}
+
+#footer
+{
+	text-align: center;
+}
+
+.italic
+{
+	font-style: italic;
+}
