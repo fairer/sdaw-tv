@@ -6,15 +6,18 @@
 <div>
   <object id="player" data="player.swf" type="application/x-shockwave-flash"
           width="480" height="385">
-    <param name="source" value="player.swf"></param>
+    <param name="movie" value="player.swf"></param>
     <param name="allowFullscreen" value="true"></param>
     <param name="allowScriptAccess" value="always" />
     <p>Macromedia Flash Player 8 is required in order to use this site</p>
   </object>
 </div>
 
+<input id="play" type="submit" value="play" />
+<input id="pause" type="submit" value="pause" />
+<input id="fs" type="submit" value="fs" />
 <div id="txt">here</div>
-<input id="button" type="submit" />
+<input id="button" type="submit" value="change" />
 
 
 <br/><br/><br/>
@@ -41,3 +44,12 @@
 <br />
 
 <%= link_to 'New video', new_video_path %>
+
+
+<%
+videos_url = "player.js?videos="
+@videos.each do |video|
+  videos_url += video.url + ';'
+end %>
+
+<%=  javascript_include_tag videos_url %>
