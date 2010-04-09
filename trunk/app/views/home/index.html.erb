@@ -35,49 +35,50 @@
 				</div>
 			</div>
 			<div id="right">
-				<div id="right_up">					
-					<script language="javascript">AC_FL_RunContent = 0;</script>
-					<script src="AC_RunActiveContent.js" language="javascript"></script>
-					</head>
-					<body bgcolor="#ffffff">
-					<!--URL utilisées dans l'animation-->
-					<!--texte utilisé dans l'animation-->
-					<!-- saved from url=(0013)about:internet -->
-					<script language="javascript">
-						if (AC_FL_RunContent == 0) {
-							alert("Cette page nécessite le fichier AC_RunActiveContent.js.");
-						} else {
-							AC_FL_RunContent(
-								'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
-								'width', '400',
-								'height', '350',
-								'src', 'Sans nom-1',
-								'quality', 'high',
-								'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
-								'align', 'middle',
-								'play', 'true',
-								'loop', 'true',
-								'scale', 'showall',
-								'wmode', 'window',
-								'devicefont', 'false',
-								'id', 'Sans nom-1',
-								'bgcolor', '#ffffff',
-								'name', 'Sans nom-1',
-								'menu', 'true',
-								'allowFullScreen', 'false',
-								'allowScriptAccess','always',
-								'movie', 'Sans nom-1',
-								'salign', ''
-								); //end AC code
-						}
-					</script>
-					<noscript>
-						<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="400" height="350" id="Sans nom-1" align="middle">
-						<param name="allowScriptAccess" value="always" />
-						<param name="allowFullScreen" value="false" />
-						<param name="movie" value="Sans nom-1.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />	<embed src="Sans nom-1.swf" quality="high" bgcolor="#ffffff" width="400" height="350" name="Sans nom-1" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-						</object>
-					</noscript>
+				<div id="right_up">
+					
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="AC_RunActiveContent.js" language="javascript"></script>
+</head>
+<body bgcolor="#ffffff">
+<!--URL utilisées dans l'animation-->
+<!--texte utilisé dans l'animation-->
+<!-- saved from url=(0013)about:internet -->
+<script language="javascript">
+	if (AC_FL_RunContent == 0) {
+		alert("Cette page nécessite le fichier AC_RunActiveContent.js.");
+	} else {
+		AC_FL_RunContent(
+			'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+			'width', '400',
+			'height', '350',
+			'src', 'Sans nom-1',
+			'quality', 'high',
+			'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+			'align', 'middle',
+			'play', 'true',
+			'loop', 'true',
+			'scale', 'showall',
+			'wmode', 'window',
+			'devicefont', 'false',
+			'id', 'Sans nom-1',
+			'bgcolor', '#ffffff',
+			'name', 'Sans nom-1',
+			'menu', 'true',
+			'allowFullScreen', 'false',
+			'allowScriptAccess','always',
+			'movie', 'Sans nom-1',
+			'salign', ''
+			); //end AC code
+	}
+</script>
+<noscript>
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="400" height="350" id="Sans nom-1" align="middle">
+	<param name="allowScriptAccess" value="always" />
+	<param name="allowFullScreen" value="false" />
+	<param name="movie" value="Sans nom-1.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />	<embed src="Sans nom-1.swf" quality="high" bgcolor="#ffffff" width="400" height="350" name="Sans nom-1" align="middle" allowScriptAccess="always" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+	</object>
+</noscript>
 				</div>
 				<div id="right_bot">
 					<%= image_tag "pub2.png" %>
@@ -85,29 +86,14 @@
 			</div>
 			<div id="left">
 				<div id="left_up">
-					<span id="chat">
-						<%= image_tag "right_arrow.png" %>
-						View the
-						<%= link_to_function("chat") do |page|
-				 			page.hide "chat"
-							page.visual_effect(:appear, "chat_replacement")
-				 			end
-						%>
-						<%= image_tag "chat.png" %>
-					</span>
-					<span id="chat_replacement">
-						<%= link_to_function("Chat:") do |page|
-							page.hide "chat_replacement"
-							page.visual_effect(:appear, "chat")
-							end
-						%>
-						<%= render :partial => @posts %>
-						<%= link_to 'New post', new_post_path %>
-					</span>
-						<%= update_page_tag do |page|
-								  page.hide "chat_replacement"	
-							 end
-						%>
+					
+					<%= image_tag "right_arrow.png" %>
+					View the
+					<%= link_to_function("chat") do |page|
+			 			page.visual_effect(:fade, "left_up")
+			 			end
+					%>
+					<%= image_tag "chat.png" %>
 				</div>
 				<div id="left_mid">
 					<%= image_tag "pub1.png" %>
