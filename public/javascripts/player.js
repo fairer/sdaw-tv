@@ -1,30 +1,21 @@
 document.observe("dom:loaded", function () {
-
-    function changeVideo(name)
-    {
-        $('player').changeSource('/videos/' + name)
-    }
+    current_id = -1;
 
     // Testing purpose. #TO DO : REMOVE
     document.getElementById("button").onclick = function () {
         changeVideo('numanuma.flv');
     };
 
-    //getPlayer().onVideoEnds = function () {
-      //  alert('lol');
-    //};
-
-    document.onmousemove = function () {
-        changeVideo('gunther.flv');
-        document.onmousemove = null;
-    };
-
     $('play').onclick = function () {
         $('player').play();
+        $('play').hide();
+        $('pause').show();
     }
 
     $('pause').onclick = function () {
         $('player').pause();
+        $('pause').hide();
+        $('play').show();
     }
 
 
@@ -32,16 +23,38 @@ document.observe("dom:loaded", function () {
         $('player').fullscreen();
     }
 
-
-    function get_urls() {
-        new Ajax.Request('videos/to_xml/', {
-            onSuccess: function(response) {
-                alert(response);
-            }
-        });
+    $('next').onclick = function () {
+        changeVideo(urls);
     }
 
-    get_urls();
+
+    function get_urls() {
+        var urls = new Array();
+        new Ajax.Request('videos/to_xml/', {
+            asynchronous: false,
+            onSuccess: function(response) {
+                var tree = response.responseXML;
+                var elements = tree.getElementsByTagName('url');
+                for(i = 0; i < elements.length; i++)
+                    urls.push(elements[i].firstChild.nodeValue);
+            },
+            onFailure: function(response) {
+                alert('Error getting video list :\n' + response.responseHTML);
+            }
+        });
+        return urls;
+    }
+
+    function changeVideo(urls)
+    {
+        var next = (current_id + 1) % (urls.length);
+        var name = urls[next];
+        current_id++;
+        $('player').changeSource('/videos/' + name)
+    }
+
+    $('play').hide();
+    var urls = get_urls();
 });
 
 
