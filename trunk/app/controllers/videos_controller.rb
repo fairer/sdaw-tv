@@ -21,6 +21,13 @@ class VideosController < ApplicationController
     end
   end
 
+  # GET /videos/to_xml
+  def to_xml
+    @videos = Video.all()
+    
+    render :xml => @videos
+  end
+
   # GET /videos/new
   # GET /videos/new.xml
   def new
