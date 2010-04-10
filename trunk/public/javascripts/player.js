@@ -1,33 +1,33 @@
 document.observe("dom:loaded", function () {
+    // ID of the current played video. init to -1
     current_id = -1;
 
-    // Testing purpose. #TO DO : REMOVE
-    document.getElementById("button").onclick = function () {
-        changeVideo('numanuma.flv');
-    };
-
+    // Play the video
     $('play').onclick = function () {
         $('player').play();
         $('play').hide();
         $('pause').show();
     }
 
+    // Pause the video
     $('pause').onclick = function () {
         $('player').pause();
         $('pause').hide();
         $('play').show();
     }
 
-
+    // View video in fullscreen mode
     $('fs').onclick = function () {
-        $('player').fullscreen();
+        $('player').fullscreen(); // Not working
+        // #FIX ME !!
     }
 
+    // Select and play next video in the database
     $('next').onclick = function () {
         changeVideo(urls);
     }
 
-
+    // Get XML list of videos and return an array of videos' urls (AJAX, synchronous)
     function get_urls() {
         var urls = new Array();
         new Ajax.Request('videos/to_xml/', {
@@ -45,6 +45,7 @@ document.observe("dom:loaded", function () {
         return urls;
     }
 
+    // Play the next video in the database
     function changeVideo(urls)
     {
         var next = (current_id + 1) % (urls.length);
@@ -53,15 +54,19 @@ document.observe("dom:loaded", function () {
         $('player').changeSource('/videos/' + name)
     }
 
+    // After fully loaded the page :
+    // Hide the button play
+    // Record videos' urls in the *urls* array
     $('play').hide();
     var urls = get_urls();
 });
 
-
+    // This function is trigered when a video is finished
     function onVideoEnds() {
         alert('end');
     }
 
+    // This function is trigered when the player is paused
     function onPaused() {
         alert('paused');
     }
