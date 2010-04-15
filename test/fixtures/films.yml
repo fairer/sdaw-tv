@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  safe_name: MyString
+  tags: MyText
+  duration: 1
+  desc: MyText
+  genre: MyString
+
+two:
+  name: MyString
+  safe_name: MyString
+  tags: MyText
+  duration: 1
+  desc: MyText
+  genre: MyString
