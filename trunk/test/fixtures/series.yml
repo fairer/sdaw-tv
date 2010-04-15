@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  tags: MyText
+  nb_seasons: 
+  average_episode_time: 2010-04-14 21:46:04
+  desc: MyText
+  genre: MyString
+
+two:
+  name: MyString
+  tags: MyText
+  nb_seasons: 
+  average_episode_time: 2010-04-14 21:46:04
+  desc: MyText
+  genre: MyString

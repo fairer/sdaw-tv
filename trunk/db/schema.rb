@@ -9,11 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100408120107) do
+ActiveRecord::Schema.define(:version => 20100414205718) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "episodes", :force => true do |t|
+    t.string   "name"
+    t.integer  "episode_number"
+    t.integer  "season"
+    t.integer  "serie"
+    t.text     "tags"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,8 +37,13 @@ ActiveRecord::Schema.define(:version => 20100408120107) do
   end
 
   create_table "videos", :force => true do |t|
-    t.string   "title"
-    t.string   "url"
+    t.string   "name"
+    t.string   "safe_name"
+    t.text     "tags"
+    t.integer  "nb_seasons"
+    t.integer  "average_episode_duration"
+    t.text     "desc"
+    t.string   "genre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

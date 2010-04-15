@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  episode_number: 1
+  season: 
+  tags: MyText
+  description: MyText
+  duration: 
+
+two:
+  name: MyString
+  episode_number: 1
+  season: 
+  tags: MyText
+  description: MyText
+  duration: 

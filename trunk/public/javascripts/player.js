@@ -39,7 +39,7 @@ document.observe("dom:loaded", function () {
                     urls.push(elements[i].firstChild.nodeValue);
             },
             onFailure: function(response) {
-                alert('Error getting video list :\n' + response.responseHTML);
+                alert('Error getting video list :\n' + response.statusText);
             }
         });
         return urls;
