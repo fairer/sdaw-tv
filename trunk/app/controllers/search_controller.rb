@@ -1,3 +1,4 @@
+
 class SearchController < ApplicationController
   def initialize
     @keyboard_distance =
@@ -67,9 +68,10 @@ class SearchController < ApplicationController
   
   def index
     search
+    #@seriestables = Seriestable.all
   end
   
-  def search_l
+  def search_l (params_array)
     @arr = ["doctor house","planete tresor","evades",
             "tueurs nes", "malcolm", "family guys griffins",
             "star wars", "scrubs", "numero neuf"]
@@ -77,7 +79,7 @@ class SearchController < ApplicationController
     @nb_word = 0
     @arr.each do |@table|
       @table.split.each do |@str|
-        @research.each do |@search|
+        params_array.each do |@search|
           if distance
             @result = @result + @distance
             @nb_word = @nb_word + 1
@@ -95,19 +97,44 @@ class SearchController < ApplicationController
   def search
     initialize
     @answer = []
-    @q = params[:q]
-    @research = (params[:q]).split
-    @l_input = @research.length - 1
+    @params = params[:q]
+    @research_params = (params[:q]).split
+    research(@research_params, @research_params.length)
+
+  end
+
+  def research (params_array, length)
     @series = true
-    for i in (0..@l_input)
-      if (@research[i] == "in")
+    for i in (0..length)
+      if (params_array[i] == "in")
         @series = false
         #Seach in the list
+        #get the identifiant of the series
+        #search episode with the identifiant of the series
+        #make a research function for find a single identifiant
         break
+      else
+        if (params_array[i] == "or")
+          if (i < length)
+            search_l (params_array[0..i-1])
+            research (params_array[i+1..length], length - i - 1)
+            @series = false
+          else
+            break
+          end
+          #Search @researh (0,i-1) @ @research(i+1, @q.length - 1)
+          break
+        else
+          if (params_array[i] == "and")#delete this
+            #delete
+          else
+            #
+          end
+        end
       end
     end
     if (@series)
-      search_l
+      search_l (params_array)
     end
   end
 end
