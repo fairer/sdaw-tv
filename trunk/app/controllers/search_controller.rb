@@ -100,7 +100,7 @@ class SearchController < ApplicationController
       end
       if (@nb_word != 0)
         video = Video.find_last_by_name @table
-        @answer[@answer.length] = [video.id.to_int, @table.to_s, video.name.to_s]
+        @answer[@answer.length] = [video.id.to_int, @table.to_s, video.name.to_s, @result / @nb_word]
       end
     end
   end
