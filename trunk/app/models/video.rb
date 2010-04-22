@@ -3,7 +3,7 @@ class Video < ActiveRecord::Base
     vids = self.find(:all, :select => :safe_name)
     names = []
     vids.each do |vid|
-      names.push vid.safe_name
+      names.push vid.name
     end
     return names
   end

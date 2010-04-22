@@ -1,7 +1,24 @@
-<% for i in 0..@answer.length - 1 do %>
-  <%= "<result>" %>
-      <%= "<id>" + @answer[i][0].to_s + "</id>" %>
-      <%= "<safe_name>" + @answer[i][1].to_s + "</safe_name>" %>
-      <%= "<name>" + @answer[i][2].to_s + "</name>" %>
-  <%= "</result>" %>
-<% end %>
+<%
+films  = []
+series = []
+episodes = []
+for i in 0..@answer.length - 1 do 
+  vid = Video.find(@answer[i][0])
+  if vid.is_film
+    films.push vid
+  else 
+    series.push vid
+    episodes = Episode.find_by_serie(vid.id, {:order => 'season'})
+  end
+end
+%>
+<films>
+  <% for film in films %>
+    <film>
+      <%= "<id>" +        film.id.to_s +        "</id>" %>
+      <%= "<safe_name>" + film.safe_name.to_s + "</safe_name>" %>
+      <%= "<name>" +      film.name.to_s +      "</name>" %>
+    </film>
+</films>
+<series>
+</series>

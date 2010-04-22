@@ -5,15 +5,18 @@
   <%= f.error_messages %>
 
   <p>
-    <%= label :name, "Video name : " %><br />
+    <%= label :name, "Start tiping serie or film name : " %><br />
     <%= text_field_tag :name, '' %>
   </p>
-  <p>
-    <%= f.select :video, ["Enter text in the field above"] %>
-  </p>
+  <div>
+    
+  </div>
   <p>
     <%= f.label :start_date %>
     <%= f.datetime_select :start_date %>
+  </p>
+  <p>
+    <%= f.hidden_field :video %>
   </p>
   <p>
     <%= f.submit 'Add', :disabled => :true %>
@@ -44,10 +47,6 @@
             id = elements[i].getElementsByTagName('id')[0].firstChild.nodeValue;
             safe_name = elements[i].getElementsByTagName('safe_name')[0].firstChild.nodeValue;
             name = elements[i].getElementsByTagName('name')[0].firstChild.nodeValue;
-            if (i == 0)
-              $('planning_video').innerHTML += '<option value="' + id + '" selected>' + name + '</option>';
-            else
-              $('planning_video').innerHTML += '<option value="' + id + '">' + name + '</option>';
           }
         }
       });
