@@ -22,7 +22,7 @@ class PlanningsController < ApplicationController
     respond_to do |format|
       if @video.save
         flash[:notice] = 'Video was successfully added to playlist.'
-        format.html { render :controller => 'home', :action => 'index' }
+        format.html { render :action => "new"}
         format.xml  { render :xml => @video, :status => :created, :location => @video }
       else
         format.html { render :action => "new" }

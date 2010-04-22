@@ -9,6 +9,7 @@
     <th>Average episode duration</th>
     <th>Desc</th>
     <th>Genre</th>
+    <th>Is Film</th>
   </tr>
 
 <% @videos.each do |video| %>
@@ -20,9 +21,13 @@
     <td><%=h video.average_episode_duration %></td>
     <td><%=h video.desc %></td>
     <td><%=h video.genre %></td>
+    <td><%=h video.is_film %></td>
     <td><%= link_to 'Show', video %></td>
     <td><%= link_to 'Edit', edit_video_path(video) %></td>
     <td><%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if !video.is_film %>
+      <td><%= link_to 'Add episode', 'videos/' + video.id.to_s + '/add_episode/' %></td>
+      <% end %>
   </tr>
 <% end %>
 </table>

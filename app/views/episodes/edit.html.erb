@@ -1,0 +1,36 @@
+<h1>Editing episode</h1>
+
+<% form_for(@episode) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :episode_number %><br />
+    <%= f.text_field :episode_number %>
+  </p>
+  <p>
+    <%= f.label :season %><br />
+    <%= f.text_field :season %>
+  </p>
+  <p>
+    <%= f.label :serie %><br />
+    <%= f.text_field :serie %>
+  </p>
+  <p>
+    <%= f.label :tags %><br />
+    <%= f.text_area :tags %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @episode %> |
+<%= link_to 'Back', episodes_path %>

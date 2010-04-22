@@ -99,7 +99,8 @@ class SearchController < ApplicationController
         end
       end
       if (@nb_word != 0)
-        @answer[@answer.length] = ([]video.id.to_int, @table.to_s, video.name.to_s)
+        video = Video.find_last_by_safe_name @table
+        @answer[@answer.length] = [video.id.to_int, @table.to_s, video.name.to_s]
       end
     end
   end
@@ -145,8 +146,8 @@ class SearchController < ApplicationController
       else
         if (params_array[i] == "or")
           if (i < length)
-            search_l (params_array[0..i-1])
-            research (params_array[i+1..length], length - i)
+            search_l(params_array[0..i-1])
+            research(params_array[i+1..length], length - i)
             @series = false
           else
             break

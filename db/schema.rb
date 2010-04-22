@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20100415181902) do
     t.integer  "average_episode_duration"
     t.text     "desc"
     t.string   "genre"
+    t.boolean  "is_film"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

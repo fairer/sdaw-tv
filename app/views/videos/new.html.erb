@@ -19,7 +19,7 @@
     <%= f.text_field :nb_seasons %>
   </p>
   <p>
-    <%= f.label :average_episode_duration %><br />
+    <%= f.label "Average episode duration (in minutes)"%><br />
     <%= f.text_field :average_episode_duration %>
   </p>
   <p>
@@ -29,6 +29,10 @@
   <p>
     <%= f.label :genre %><br />
     <%= f.text_field :genre %>
+  </p>
+  <p>
+    <%= f.label "This video is a film :"%>
+    <%= f.check_box :is_film %>
   </p>
   <p>
     <%= f.submit 'Create' %>
