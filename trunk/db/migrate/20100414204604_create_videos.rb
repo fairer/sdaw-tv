@@ -8,6 +8,7 @@ class CreateVideos < ActiveRecord::Migration
       t.integer :average_episode_duration
       t.text :desc
       t.string :genre
+      t.boolean :is_film
 
       t.timestamps
     end

@@ -1,0 +1,26 @@
+<h1>Listing episodes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Episode number</th>
+    <th>Season</th>
+    <th>Serie</th>
+    <th>Tags</th>
+    <th>Description</th>
+  </tr>
+
+<% @episodes.each do |episode| %>
+  <tr>
+    <td><%=h episode.name %></td>
+    <td><%=h episode.episode_number %></td>
+    <td><%=h episode.season %></td>
+    <td><%=h episode.serie %></td>
+    <td><%=h episode.tags %></td>
+    <td><%=h episode.description %></td>
+    <td><%= link_to 'Show', episode %></td>
+    <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
+    <td><%= link_to 'Destroy', episode, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

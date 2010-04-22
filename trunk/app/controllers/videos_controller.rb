@@ -86,4 +86,8 @@ class VideosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def add_episode
+    redirect_to :controller => 'episodes', :action => 'new', :id => params[:id]
+  end
 end
