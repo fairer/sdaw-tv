@@ -1,0 +1,56 @@
+
+<h1>Add video to the planning</h1>
+
+<% form_for(@video) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= label :name, "Video name : " %><br />
+    <%= text_field_tag :name, '' %>
+  </p>
+  <p>
+    <%= f.select :video, ["Enter text in the field above"] %>
+  </p>
+  <p>
+    <%= f.label :start_date %>
+    <%= f.datetime_select :start_date %>
+  </p>
+  <p>
+    <%= f.submit 'Add', :disabled => :true %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', '/' %>
+
+<script type="text/javascript">
+  var last_value = '';
+  new Form.Element.Observer($('name'), 0.3, function () {
+    if (last_value != $('name').value)
+    {
+      new Ajax.Request('/search/index.xml', {
+        method: 'post',
+        postBody: 'q=' + $('name').value,
+        onSuccess: function(response) {
+          res = response.responseXML;
+          elements = res.getElementsByTagName('result');
+          if (elements.length != 0) {
+            $('planning_video').innerHTML = '';
+            $('planning_submit').disabled = false;
+          }
+          else
+            $('planning_video').innerHTML = '<option value="null">No result</option>'
+          for(i = 0; i < elements.length; i++)
+          {
+            id = elements[i].getElementsByTagName('id')[0].firstChild.nodeValue;
+            safe_name = elements[i].getElementsByTagName('safe_name')[0].firstChild.nodeValue;
+            name = elements[i].getElementsByTagName('name')[0].firstChild.nodeValue;
+            if (i == 0)
+              $('planning_video').innerHTML += '<option value="' + id + '" selected>' + name + '</option>';
+            else
+              $('planning_video').innerHTML += '<option value="' + id + '">' + name + '</option>';
+          }
+        }
+      });
+    }
+  });
+</script>

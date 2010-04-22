@@ -37,8 +37,6 @@ class SearchController < ApplicationController
   end
   
   def distance
-    #@str.downcase!
-    #@search.downcase!
     length1 = @str.length
     length2 = @search.length
     tab = mda(length1+1, length2+1, 0.0)
@@ -69,12 +67,18 @@ class SearchController < ApplicationController
   def index
     search
     #@seriestables = Seriestable.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @videos }
+    end
   end
   
   def search_l (params_array)
-    @arr = ["doctor house","planete tresor","evades",
-            "tueurs nes", "malcolm", "family guys griffins",
-            "star wars", "scrubs", "numero neuf"]
+#    @arr = ["doctor house","planete tresor","evades",
+#            "tueurs nes", "malcolm", "family guys griffins",
+#            "star wars", "scrubs", "numero neuf"]
+    @arr = Video.get_all_names
+
     @result = 0.0
     @nb_word = 0
     @arr.each do |@table|
@@ -87,7 +91,8 @@ class SearchController < ApplicationController
         end
       end
       if (@nb_word != 0)
-        @answer[@answer.length] = ([@result/@nb_word, @table])
+        video = Video.find_last_by_safe_name @table
+        @answer[@answer.length] = [video.id.to_int, @table.to_s, video.name.to_s]
       end
       @result = 0.0
       @nb_word = 0
@@ -108,7 +113,7 @@ class SearchController < ApplicationController
     for i in (0..length)
       if (params_array[i] == "in")
         @series = false
-        #Seach in the list
+        #Search in the list
         #get the identifiant of the series
         #search episode with the identifiant of the series
         #make a research function for find a single identifiant
