@@ -99,7 +99,7 @@ class SearchController < ApplicationController
         end
       end
       if (@nb_word != 0)
-        video = Video.find_last_by_safe_name @table
+        video = Video.find_last_by_name @table
         @answer[@answer.length] = [video.id.to_int, @table.to_s, video.name.to_s]
       end
     end
