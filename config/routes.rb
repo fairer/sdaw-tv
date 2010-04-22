@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.resources :plannings
+  map.resources :videos
   map.resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -42,7 +44,9 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
   map.root :controller => 'home'
+
   map.connect ':controller/:action/:id'
+  map.connect ':controller/:action.:format'
   map.connect ':controller/:action/:id.:format'
 
 end
