@@ -1,4 +1,5 @@
 require 'extend_string'
+require 'ftools'
 
 class VideosController < ApplicationController
   # GET /videos
@@ -44,6 +45,13 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(params[:video])
     @video.safe_name = @video.name.urlize(:regexp => /[^A-Za-z0-9]/)
+    if params[:video][:is_film]
+      file = params[:file]
+      File.copy file.path, 'public/videos/films/' + @video.safe_name + '.flv'
+#      File.open(('public/videos/films/' + @video.safe_name + '.flv'), 'w') { |f|
+#        f.write('lo')
+#      }
+    end
 
     respond_to do |format|
       if @video.save

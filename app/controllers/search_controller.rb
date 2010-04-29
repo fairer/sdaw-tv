@@ -37,8 +37,8 @@ class SearchController < ApplicationController
        [1,4,2,2,2,3,4,5,7,6,7,8,6,5,8,9,2,3,1,4,6,3,2,1,5,0]]
     @d = Array.new(10, 0.0)
     for i in (0..9)
-      d[i] = 1.0 -
-        Math.tan(0.5/(@keyboard_distance[@str[i-1]-97][@search[j-1]-97])))
+      @d[i] = 1.0 -
+        Math.tan(0.5/i)
     end
   end
 

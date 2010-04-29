@@ -1,4 +1,4 @@
-class Video < ActiveRecord::Base  
+class Video < ActiveRecord::Base
   def self.get_all_names
     vids = self.find(:all, :select => :name)
     names = []
