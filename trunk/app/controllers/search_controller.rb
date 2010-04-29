@@ -6,8 +6,8 @@
 class SearchController < ApplicationController
 
   def initialize
-    @series = true
-    #Distance des touches sur le clavier
+    @series = false
+    #Keyboard Distance
     @keyboard_distance =
       [[0,5,3,2,3,3,4,5,8,6,7,8,7,6,9,9,1,4,1,5,7,4,2,2,6,1],
        [5,0,2,3,4,2,1,1,4,2,3,5,2,1,6,7,6,4,3,2,5,1,5,3,3,4],
@@ -35,10 +35,15 @@ class SearchController < ApplicationController
        [2,3,1,1,2,2,3,4,6,5,6,7,7,4,6,8,3,2,1,3,5,2,2,0,4,1],
        [6,3,5,4,3,2,2,1,2,2,3,4,3,2,3,4,5,2,4,1,1,2,4,4,0,5],
        [1,4,2,2,2,3,4,5,7,6,7,8,6,5,8,9,2,3,1,4,6,3,2,1,5,0]]
+    @d = Array.new(10, 0.0)
+    for i in (0..9)
+      d[i] = 1.0 -
+        Math.tan(0.5/(@keyboard_distance[@str[i-1]-97][@search[j-1]-97])))
+    end
   end
 
   #create a matrice
-  def mda(width,height, type)
+  def mda(width, height, type)
     a = Array.new(width, type)
     a.map! { Array.new(height, type) }
     return a
@@ -61,8 +66,7 @@ class SearchController < ApplicationController
         if (@str[i-1] == @search[j-1])
           costs = 0.0
         else
-          costs = 1.0 -
-            Math.tan(0.5/(@keyboard_distance[@str[i-1]-97][@search[j-1]-97]))
+          costs = @d[@keyboard_distance[@str[i-1]-97][@search[j-1]-97]]
         end
         tab[i][j] =
           [tab[i-1][j  ] + 1,
@@ -83,9 +87,6 @@ class SearchController < ApplicationController
   end
 
   def search_l (params_array)
-    # @arr = ["doctor house","planete tresor","evades",
-    #        "tueurs nes", "malcolm", "family guys griffins",
-    #        "star wars", "scrubs", "numero neuf"]
     @arr = Video.get_all_names
     @arr.each do |@table|
       @result = 0.0
@@ -100,7 +101,10 @@ class SearchController < ApplicationController
       end
       if (@nb_word != 0)
         video = Video.find_last_by_name @table
-        @answer[@answer.length] = [video.id.to_int, @table.to_s, video.name.to_s, @result / @nb_word]
+        @answer[@answer.length] = [video.id.to_int,
+                                   @table.to_s,
+                                   video.name.to_s,
+                                   @result / @nb_word]
       end
     end
   end
@@ -109,38 +113,69 @@ class SearchController < ApplicationController
     initialize
     @answer = []
     @params = params[:q]
-    @research_params = (params[:q]).split
-    research(@research_params, @research_params.length)
+    if (@params != "")
+      @research_params = (params[:q]).split
+      research(@research_params, @research_params.length)
+    else
+      @answer = []
+    end
   end
 
-  def search_episode#(params_array) #a finir # add id
-    # a finir
+  def search_episode(params_array, id) # à tester
     @answer = []
-    @answer[0] =([0.0,"Ca marche peut etre"])
+    @arr = Episode.find_all_by_serie (id)###########
+    @arr.each do |@table|
+      @result = 0.0
+      @nb_word = 0
+      @table.split.each do |@str|
+        params_array.each do |@search|
+          if distance
+            @result = @result + @distance
+            @nb_word = @nb_word + 1
+          end
+        end
+      end
+      if (@nb_word != 0)
+        episode = Episode.find_last_by_name @table
+        @answer[@answer.length] = [episode.id.to_int,
+                                   @table.to_s,
+                                   episode.name.to_s,
+                                   @result / @nb_word]
+      end
+    end
   end
 
-  def get_all() #à finir
-    ###########################################
-    # {table_des_series}.each do |line|
-    ###########################################
-    #  @answer[@answer.length] = ([0.0,
-    #                              line.id,
-    #                              line.name,
-    #                              line.description,
-    #                              line.length,
-    #                              line.numbersaison,
-    #                              line.numberepisode])
-    #
-    #end
+  def get_all() #à tester
+    @arr = Video.get_all_names
+    @arr.each do |@table|
+      video = Video.find_last_by_name @table
+      @answer[@answer.length] = [video.id.to_int,
+                                 @table.to_s,
+                                 video.name.to_s,
+                                 0.0]
+    end
   end
-
+##############################################################
+  def get_all_episode_from (id) #à tester
+    @arr = Video.find_all_by_serie(id)
+    @arr.each do |@table|
+      video = Video.find_last_by_name @table
+      @answer[@answer.length] = [video.id.to_int,
+                                 @table.to_s,
+                                 video.name.to_s,
+                                 0.0]
+    end
+  end
+#############################################################
   def research (params_array, length)
+    other = true
     for i in (0..length)
       if ((params_array[i] == "in") && (i < length))
-        @series = false
+        other = false
         search_l(params_array[i+1..length])
         if (@answer.length != 0)
-          search_episode#(params_array[0..i-1]) # add id
+          search_episode(params_array[0..i-1], @answer[0][0])######
+          @series = true;
         end
         break
       else
@@ -148,29 +183,26 @@ class SearchController < ApplicationController
           if (i < length)
             search_l(params_array[0..i-1])
             research(params_array[i+1..length], length - i)
-            @series = false
-          else
-            break
+            other = false
           end
           break
         else
-          if (params_array[i] == "and")#delete this
-            #delete
-            #wtf delete this
-            # Today, Please
-          else
-            if ((i = length) && (params_array[i] == "all"))
-              @series = false
-              get_all() #a finir
+          if (params_array[i] == "all")
+            if (i == length)
+              other = false
+              get_all() #à tester
             else
-
+              if ((i < length -1) && (params_array[i+1] = "in"))
+                research(params_array[i+2..length], lengtj - i -1)
+                get_all_episode_from(@answer[0][0])############
+              end
             end
           end
         end
       end
     end
     #Research
-    if (@series)
+    if (other)
       search_l (params_array)
     end
   end
