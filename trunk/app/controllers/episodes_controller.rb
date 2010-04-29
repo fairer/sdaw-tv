@@ -53,7 +53,7 @@ class EpisodesController < ApplicationController
     respond_to do |format|
       if @episode.save
         flash[:notice] = 'Episode was successfully created.'
-        format.html { redirect_to(@episode) }
+        format.html { redirect_to :controller => 'videos', :action => 'show', :id => params[:episode][:serie] }
         format.xml  { render :xml => @episode, :status => :created, :location => @episode }
       else
         format.html { render :action => "new" }
@@ -70,7 +70,7 @@ class EpisodesController < ApplicationController
     respond_to do |format|
       if @episode.update_attributes(params[:episode])
         flash[:notice] = 'Episode was successfully updated.'
-        format.html { redirect_to(@episode) }
+        format.html { redirect_to :controller => 'videos', :action => 'show', :id => params[:episode][:serie] }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

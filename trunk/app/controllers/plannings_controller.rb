@@ -22,7 +22,7 @@ class PlanningsController < ApplicationController
     respond_to do |format|
       if @video.save
         flash[:notice] = 'Video was successfully added to playlist.'
-        format.html { render :action => "new"}
+        format.html { redirect_to :action => "new"}
         format.xml  { render :xml => @video, :status => :created, :location => @video }
       else
         format.html { render :action => "new" }
@@ -31,4 +31,11 @@ class PlanningsController < ApplicationController
     end
   end
 
+  def now
+    @result = Planning.get_currently_playing
+  end
+
+  def get_ad
+    @ad = Planning.get_ad
+  end
 end

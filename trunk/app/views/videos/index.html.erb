@@ -26,7 +26,7 @@
     <td><%= link_to 'Edit', edit_video_path(video) %></td>
     <td><%= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete %></td>
     <% if !video.is_film %>
-      <td><%= link_to 'Add episode', 'videos/' + video.id.to_s + '/add_episode/' %></td>
+      <td><%= link_to 'Add episode', video.id.to_s + '/add_episode/' %></td>
       <% end %>
   </tr>
 <% end %>

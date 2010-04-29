@@ -147,3 +147,15 @@ a img
 {
 	font-style: italic;
 }
+
+#results
+{
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 0 20px;
+}
+
+#results em
+{
+    margin-left: 10px;
+}
