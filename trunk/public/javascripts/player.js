@@ -42,7 +42,11 @@ function get_url() {
                     url[1] = tree.getElementsByTagName('seek-time')[0].firstChild.nodeValue;
                 }
                 else{
-                    alert('not a movie');
+                    var episode = tree.getElementsByTagName('episode')[0];
+                    url[0] = 'series/' + tree.getElementsByTagName('safe-name')[0].firstChild.nodeValue + '/season' +
+                        episode.getElementsByTagName('season')[0].firstChild.nodeValue + '/episode' +
+                        episode.getElementsByTagName('episode-number')[0].firstChild.nodeValue + '.flv';
+                    url[1] = tree.getElementsByTagName('seek-time')[0].firstChild.nodeValue;
                 }
             }
             else {
