@@ -1,0 +1,10 @@
+<%= '<playing>' %>
+<% if @result != nil %>
+  <start-date><%= @result[:start_date].utc %></start-date>
+  <seek-time><%= @result[:seek] %></seek-time>
+  <%= @result[:video].to_xml :skip_instruct => true %>
+  <% if !@result[:video].is_film %>
+    <%= @result[:episode].to_xml :skip_instruct => true %>
+  <% end %>
+<% end %>
+<%= '</playing>' %>

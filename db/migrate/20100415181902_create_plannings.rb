@@ -1,7 +1,7 @@
 class CreatePlannings < ActiveRecord::Migration
   def self.up
     create_table :plannings do |t|
-      t.integer :video
+      t.string :video
       t.timestamp :start_date
 
       t.timestamps

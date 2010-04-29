@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20100415181902) do
   end
 
   create_table "plannings", :force => true do |t|
-    t.integer  "video"
+    t.string   "video"
     t.datetime "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :episodes
 
-
+  map.connect 'plannings/get_ad.:format', :controller => 'plannings', :action => 'get_ad'
+  map.connect 'plannings/now.:format', :controller => 'plannings', :action => 'now'
   map.resources :plannings
+  map.connect 'planning/:action', :controller => 'plannings'
   map.resources :videos
   map.resources :posts
   map.add_episode 'videos/:id/add_episode', :controller => 'videos', :action => 'add_episode'
