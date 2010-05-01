@@ -26,8 +26,13 @@ class Planning < ActiveRecord::Base
 
   def self.get_ad
     entries = Dir.entries('public/videos/ads/')
-    entries.drop(1)
-    entries.drop(2)
-    return entries[rand(entries.length - 2) + 2]
+    ads = Array.new
+    entries.each do |e|
+      if e.split('')[0] != '.'
+        ads.push e
+      end
+    end
+    puts ads
+    return ads[rand(ads.length)]
   end
 end
