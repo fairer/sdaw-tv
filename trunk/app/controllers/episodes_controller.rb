@@ -1,3 +1,6 @@
+require 'extend_string'
+require 'FileUtils'
+
 class EpisodesController < ApplicationController
   # GET /episodes
   # GET /episodes.xml
@@ -49,6 +52,14 @@ class EpisodesController < ApplicationController
   # POST /episodes.xml
   def create
     @episode = Episode.new(params[:episode])
+    @episode.safe_name = @episode.name.urlize(:regexp => /[^A-Za-z0-9]/)
+    file = params[:file]
+    dir = 'public/videos/series/' + Video.find(params[:episode][:serie]).safe_name +
+      '/season' + params[:episode][:season] + '/'
+    if !FileUtils.directory?(dir)
+      FileUtils.mkdir(dir)
+    end
+    FileUtils.copy file.path, dir + 'episode' + params[:episode][:episode_number] + '.flv'
 
     respond_to do |format|
       if @episode.save
@@ -83,8 +94,18 @@ class EpisodesController < ApplicationController
   # DELETE /episodes/1.xml
   def destroy
     @episode = Episode.find(params[:id])
+    file = 'public/videos/series/' + Video.find(@episode.serie).safe_name +
+      '/season' + @episode.season.to_s + '/episode' + @episode.episode_number.to_s + '.flv'
+    if FileUtils.exists?(file)
+      FileUtils.delete file
+    end
+    dir = 'public/videos/series/' + Video.find(@episode.serie).safe_name +
+      '/season' + @episode.season.to_s + '/'
+    if FileUtils.entries(dir).length - 2 == 0 #-2 to exclude "." and ".."
+      FileUtils.rmdir(dir)
+    end
     @episode.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to(episodes_url) }
       format.xml  { head :ok }

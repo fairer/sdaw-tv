@@ -1,6 +1,6 @@
 <h1>New episode</h1>
 
-<% form_for(@episode) do |f| %>
+<% form_for(@episode, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <% serie = Video.find(params[:id])
@@ -39,6 +39,10 @@
   <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= "Episode video file :"%><br />
+    <%= file_field_tag :file  %>
   </p>
   <p>
     <%= f.submit 'Create' %>

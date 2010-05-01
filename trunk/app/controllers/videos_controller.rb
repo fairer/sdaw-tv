@@ -1,5 +1,5 @@
 require 'extend_string'
-require 'ftools'
+require 'FileUtils'
 
 class VideosController < ApplicationController
   # GET /videos
@@ -45,12 +45,11 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(params[:video])
     @video.safe_name = @video.name.urlize(:regexp => /[^A-Za-z0-9]/)
-    if params[:video][:is_film]
+    if (params[:video][:is_film] == "1")
       file = params[:file]
-      File.copy file.path, 'public/videos/films/' + @video.safe_name + '.flv'
-#      File.open(('public/videos/films/' + @video.safe_name + '.flv'), 'w') { |f|
-#        f.write('lo')
-#      }
+      FileUtils.copy_file file.path, 'public/videos/films/' + @video.safe_name + '.flv'
+    else
+      FileUtils.mkdir('public/videos/series/' + @video.safe_name + '/')
     end
 
     respond_to do |format|
@@ -87,6 +86,17 @@ class VideosController < ApplicationController
   # DELETE /videos/1.xml
   def destroy
     @video = Video.find(params[:id])
+    if @video.is_film
+      file = 'public/videos/films/' + @video.safe_name + '.flv'
+      if File.exists?(file)
+        FileUtils.rm(file)
+      end
+    else
+      dir = 'public/videos/series/' + @video.safe_name + '/'
+      if File.directory?(dir)
+        FileUtils.rmdir(dir)
+      end
+    end
     @video.destroy
 
     respond_to do |format|

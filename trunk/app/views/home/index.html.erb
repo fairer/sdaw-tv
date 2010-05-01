@@ -38,11 +38,25 @@
 
                                     <param name="allowFullscreen" value="true" />
                                     <param name="allowScriptAccess" value="always" />
+                                    <param name="quality" value="best" />
+                                    <param name="scale" value="noscale" />
                                     <p>Macromedia Flash Player 8 is required in order to use this site</p>
                                   </object><br/>
 
-                                  <input id="play" type="submit" value="play" />
-                                  <input id="pause" type="submit" value="pause" />
+                                  <div id="player_toolbar">
+                                    <%= image_tag 'play.png', :id => 'play' %>
+                                    <%= image_tag 'pause.png', :id => 'pause' %>
+                                    <div id="progress_bar">
+                                      <div id="progress"></div>
+                                    </div>
+
+                                    <div id="time">
+                                      <span id="progress_time">00:00</span> |
+                                      <span id="total_time">00:00</span>
+                                    </div>
+                                  </div>
+
+                                  <p><span id="now"></span><br/></p>
 				</div>
 				<div id="right_bot">
 					<%= image_tag "pub2.png" %>

@@ -40,22 +40,29 @@ function get_url() {
                 if (tree.getElementsByTagName('is-film')[0].firstChild.nodeValue == "true") {
                     url[0] = 'films/' + tree.getElementsByTagName('safe-name')[0].firstChild.nodeValue + '.flv';
                     url[1] = tree.getElementsByTagName('seek-time')[0].firstChild.nodeValue;
+                    $('now').innerHTML = 'Now Playing : ' + tree.getElementsByTagName('name')[0].firstChild.nodeValue;
                 }
                 else{
+                    var serie = tree.getElementsByTagName('video')[0];
                     var episode = tree.getElementsByTagName('episode')[0];
                     url[0] = 'series/' + tree.getElementsByTagName('safe-name')[0].firstChild.nodeValue + '/season' +
                         episode.getElementsByTagName('season')[0].firstChild.nodeValue + '/episode' +
                         episode.getElementsByTagName('episode-number')[0].firstChild.nodeValue + '.flv';
                     url[1] = tree.getElementsByTagName('seek-time')[0].firstChild.nodeValue;
+                    $('now').innerHTML = 'Now Playing : ' + serie.getElementsByTagName('name')[0].firstChild.nodeValue +
+                        ', Season ' + episode.getElementsByTagName('season')[0].firstChild.nodeValue + ', ' +
+                        'Episode ' + episode.getElementsByTagName('episode-number')[0].firstChild.nodeValue + ' : ' +
+                         episode.getElementsByTagName('name')[0].firstChild.nodeValue;
                 }
             }
             else {
                 url[0] = 'ads/' + find_ad();
                 url[1] = 0;
+                $('now').innerHTML = 'Advertisement. Please wait for programmation to start.';
             }
         },
         onFailure: function(response) {
-            alert('Error getting video list :\n' + response.statusText);
+            alert('Error getting video :\n' + response.statusText);
         }
     });
     return url;
@@ -78,6 +85,27 @@ function get_urls(){}
 function onVideoEnds() {
     var url = get_url();
     changeVideo(url[0], url[1]);
+}
+
+function fancy_time(t, l) {
+    var m = Math.floor(t / 60).toString();
+    var s = Math.floor(t % 60).toString();
+    while (m.length < l) {
+        m = '0' + m;
+    }
+    while (s.length < l) {
+        s = '0' + s;
+    }
+    return m + ':' + s;
+}
+
+function onVideoProgress(progress, total) {
+    var width = 480 - 17 - $('time').getDimensions().width - 8;
+    var width_progress = progress / total * width;
+    $('progress_time').innerHTML = fancy_time(progress, 2);
+    $('total_time').innerHTML = fancy_time(total, 2);
+    $('progress_bar').setStyle({'width': width + 'px'});
+    $('progress').setStyle({'width': width_progress + 'px'});
 }
 
 // This function is trigered when the player is paused

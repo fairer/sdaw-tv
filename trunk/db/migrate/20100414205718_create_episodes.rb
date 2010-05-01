@@ -2,6 +2,7 @@ class CreateEpisodes < ActiveRecord::Migration
   def self.up
     create_table :episodes do |t|
       t.string :name
+      t.string :safe_name
       t.integer :episode_number
       t.integer :season
       t.integer :serie

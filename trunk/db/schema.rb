@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20100415181902) do
 
   create_table "episodes", :force => true do |t|
     t.string   "name"
+    t.string   "safe_name"
     t.integer  "episode_number"
     t.integer  "season"
     t.integer  "serie"
