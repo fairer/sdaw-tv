@@ -1,0 +1,3 @@
+page.hide "select_period"
+page.show "select_moment"
+page.insert_html :bottom, "selection", " : " + @period
