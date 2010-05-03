@@ -1,4 +1,7 @@
+Recherche : <%= @params %><br/><br/>
+R&eacute;sultat :<br/>
 <% @answer.sort_by {|res| res[res.length - 1]} %>
 <% for i in 0..@answer.length - 1 do %>
-    <%= @answer[i][2].to_s %>
+    <%= @answer[i][2].to_s %> <%= @answer[i][3] %><br/>
 <% end %>
+<%= @arr %>

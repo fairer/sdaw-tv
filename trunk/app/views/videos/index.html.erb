@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Name</th>
     <th>Safe name</th>
     <th>Tags</th>
@@ -14,6 +15,7 @@
 
 <% @videos.each do |video| %>
   <tr>
+    <td><%=h video.id%></td>
     <td><%=h video.name %></td>
     <td><%=h video.safe_name %></td>
     <td><%=h video.tags %></td>
