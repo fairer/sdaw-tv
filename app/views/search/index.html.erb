@@ -20,11 +20,36 @@
        <%= text_field_tag :q ,@params, :size=>"15" %>
        <%= submit_tag("Research") %>
        <% end %>
-     </div><br/><br/>
-       R&eacute;sultat :<br/>
-       <% @answer.sort_by {|res| res[res.length - 1]} %>
-       <% for i in 0..@answer.length - 1 do %>
-          <%= @answer[i][2].to_s %> <%= @answer[i][3] %><br/>
+     </div>
+     <br/><br/>
+     <hr/>
+     <div class="research">
+       Il y a
+       <% l = @answer.length %>
+       <b> <%= l %></b>
+       <% if l <= 1 %>
+          r&eacute;sultat
+       <% else %>
+          r&eacute;sultats
        <% end %>
+       pour <b><%= @params %></b>
+     </div>
+     <% if l != 0 %>
+        <% @answer.sort_by {|res| res[res.length - 1]} %>
+        <% for i in 0..@answer.length - 1 do %>
+           <div>
+              <%= @answer[i][2].to_s %><br/>
+	   </div>
+	<% end %>
+     <% else%>
+       We haven't find any Series or Episode for
+           <b> <%= @params %> </b>.<br/><br/>
+       Try again, with <br/>
+       <ul>
+          <li>another spelling</li>
+          <li>another words</li>
+          <li>few words</li>
+       </ul>
+     <% end %>
    </body>
 </html>
