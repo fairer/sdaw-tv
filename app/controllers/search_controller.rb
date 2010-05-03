@@ -1,8 +1,16 @@
-###############################################################################
+ ###############################################################################
 ##                                                                           ##
 ##                          Cadre qui ne sert a rien                         ##
 ##                                                                           ##
 ###############################################################################
+#
+#charactere spéciaux recherche -- Done
+#recherche all -- Done
+#recherche episode -- Done
+#recherche episode all
+#
+#
+#
 class SearchController < ApplicationController
 
   def initialize
@@ -37,8 +45,7 @@ class SearchController < ApplicationController
        [1,4,2,2,2,3,4,5,7,6,7,8,6,5,8,9,2,3,1,4,6,3,2,1,5,0]]
     @d = Array.new(10, 0.0)
     for i in (0..9)
-      @d[i] = 1.0 -
-        Math.tan(0.5/i)
+      @d[i] = 1.0 - Math.tan(0.5 / i)
     end
   end
 
@@ -48,6 +55,11 @@ class SearchController < ApplicationController
     a.map! { Array.new(height, type) }
     return a
   end
+
+  def is_char?(i)
+    return ((i > 0) && (i <= 26))
+  end
+
 
   def distance
     @str.downcase!
@@ -63,15 +75,23 @@ class SearchController < ApplicationController
     end
     for i in (1..length1)
       for j in (1..length2)
-        if (@str[i-1] == @search[j-1])
-          costs = 0.0
+        if (is_char?(@str[i-1]-97) && is_char?(@search[j-1]-97))
+          if (@str[i-1] == @search[j-1])
+            costs = 0.0
+          else
+            costs = @d[@keyboard_distance[@str[i-1]-97][@search[j-1]-97]]
+          end
+          tab[i][j] =
+            [tab[i-1][j  ] + 1,
+             tab[i  ][j-1] + 1,
+             tab[i-1][j-1] + costs].min
         else
-          costs = @d[@keyboard_distance[@str[i-1]-97][@search[j-1]-97]]
+          if (is_char?(@str[i-1]-97))
+            tab[i][j] = tab[i][j-1]
+          else
+            tab[i][j] = tab[i-1][j]
+          end
         end
-        tab[i][j] =
-          [tab[i-1][j  ] + 1,
-           tab[i  ][j-1] + 1,
-           tab[i-1][j-1] + costs].min
       end
     end
     @distance = tab[length1][length2]
@@ -79,6 +99,7 @@ class SearchController < ApplicationController
   end
 
   def index
+    initialize
     search()
     respond_to do |format|
       format.html
@@ -89,58 +110,61 @@ class SearchController < ApplicationController
   def search_l (params_array)
     @arr = Video.get_all_names
     @arr.each do |@table|
-      @result = 0.0
-      @nb_word = 0
+      result = 0.0
+      nb_word = 0
       @table.split.each do |@str|
         params_array.each do |@search|
           if distance
-            @result = @result + @distance
-            @nb_word = @nb_word + 1
+            result  = result + @distance
+            nb_word = nb_word + 1
           end
         end
       end
-      if (@nb_word != 0)
+      if (nb_word != 0)
         video = Video.find_last_by_name @table
         @answer[@answer.length] = [video.id.to_int,
                                    @table.to_s,
                                    video.name.to_s,
-                                   @result / @nb_word]
+                                   result / nb_word]
       end
     end
   end
 
   def search
-    initialize
     @answer = []
     @params = params[:q]
     if (@params != "")
       @research_params = (params[:q]).split
-      research(@research_params, @research_params.length)
+      l = @research_params.length.- 1
+      research(@research_params, l)
     else
       @answer = []
     end
   end
 
-  def search_episode(params_array, id) # à tester
+  def search_episode(params_array, id)
     @answer = []
-    @arr = Episode.find_all_by_serie (id)###########
-    @arr.each do |@table|
-      @result = 0.0
-      @nb_word = 0
-      @table.split.each do |@str|
-        params_array.each do |@search|
-          if distance
-            @result = @result + @distance
-            @nb_word = @nb_word + 1
+    @arr = Episode.find(:all, :conditions => {:serie => id})
+    @test = @arr != []
+    if @test
+      @arr.each do |line|
+        @table = line.tags.to_s
+        result = 0.0
+        nb_word = 0
+        @table.split.each do |@str|
+          params_array.each do |@search|
+            if distance
+              result = result + @distance
+              nb_word = nb_word + 1
+            end
           end
         end
-      end
-      if (@nb_word != 0)
-        episode = Episode.find_last_by_name @table
-        @answer[@answer.length] = [episode.id.to_int,
-                                   @table.to_s,
-                                   episode.name.to_s,
-                                   @result / @nb_word]
+        if (nb_word != 0)
+          @answer[@answer.length] = [id,
+                                     @table.to_s,
+                                     line.name,
+                                     result / nb_word]
+        end
       end
     end
   end
@@ -155,6 +179,7 @@ class SearchController < ApplicationController
                                  0.0]
     end
   end
+
 ##############################################################
   def get_all_episode_from (id) #à tester
     @arr = Video.find_all_by_serie(id)
