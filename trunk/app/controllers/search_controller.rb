@@ -1,12 +1,9 @@
- ###############################################################################
-##                                                                           ##
-##                          Cadre qui ne sert a rien                         ##
-##                                                                           ##
-###############################################################################
 
 class SearchController < ApplicationController
 
   def initialize
+    @epi = []
+    @answer = []
     @all = false
     @series = false
     #Keyboard Distance
@@ -102,11 +99,12 @@ class SearchController < ApplicationController
   end
 
   def search_l (params_array)
-    @arr = Video.get_all_names
-    @arr.each do |@table|
+    @arr = Video.find(:all)
+    @arr.each do |table|
+      name = table.tags
       result = 0.0
       nb_word = 0
-      @table.split.each do |@str|
+      name.split.each do |@str|
         params_array.each do |@search|
           if distance
             result  = result + @distance
@@ -115,96 +113,113 @@ class SearchController < ApplicationController
         end
       end
       if (nb_word != 0)
-        video = Video.find_last_by_name @table
-        @answer[@answer.length] = [video.id.to_int,
-                                   @table.to_s,
-                                   video.name.to_s,
+        @answer[@answer.length] = [table.id.to_int,
+                                   table.name,
+                                   table.is_film,
+                                   table.desc,
+                                   table.nb_seasons.to_int,
+                                   table.average_episode_duration.to_int,
+                                   table.genre,
+                                   table.tags,
                                    result / nb_word]
       end
     end
   end
 
   def search
-    @answer = []
     @params = params[:q]
     if (@params != "")
-      @research_params = (params[:q]).split
-      l = @research_params.length.- 1
-      research(@research_params, l)
-    else
-      @answer = []
+      @research_params = @params.split
+      research(@research_params)
     end
+    @answer.sort_by {|res| res[res.length.- 1]}
+    @epi.sort_by {|res| res[res.length.- 1]}
   end
 
   def search_episode(params_array, id)
-    @answer = []
+    @series = true
     @arr = Episode.find(:all, :conditions => {:serie => id})
-    @test = @arr != []
-    if @test
+    if @arr != []
       @arr.each do |line|
-        @table = line.tags.to_s
-        result = 0.0
-        nb_word = 0
-        @table.split.each do |@str|
-          params_array.each do |@search|
-            if distance
-              result = result + @distance
-              nb_word = nb_word + 1
+        if line.serie == id
+          @table = line.tags.to_s
+          result = 0.0
+          nb_word = 0
+          @table.split.each do |@str|
+            params_array.each do |@search|
+              if distance
+                result = result + @distance
+                nb_word = nb_word + 1
+              end
             end
           end
-        end
-        if (nb_word != 0)
-          @answer[@answer.length] = [id,
-                                     @table.to_s,
-                                     line.name,
-                                     result / nb_word]
+          if (nb_word != 0)
+            @epi[@epi.length] = [id,
+                                 line.name,
+                                 line.description,
+                                 line.season,
+                                 line.episode_number,
+                                 line.tags,
+                                 line.serie,
+                                 result / nb_word]
+          end
         end
       end
     end
   end
 
   def get_all()
-    @arr = Video.get_all_names
-    @arr.each do |@table|
-      video = Video.find_last_by_name @table
-      @answer[@answer.length] = [video.id.to_int,
-                                 @table.to_s,
-                                 video.name.to_s,
-                                 video.id.to_int]
+    @arr = Video.find(:all)
+    @arr.each do |table|
+      @answer[@answer.length] = [table.id.to_int,
+                                 table.name,
+                                 table.is_film,
+                                 table.desc,
+                                 table.nb_seasons.to_int,
+                                 table.average_episode_duration.to_int,
+                                 table.genre,
+                                 table.tags,
+                                 rand()]
     end
   end
 
   def get_all_episode_from (id)
-    @answer = []
-    @arr = Episode.find(:all, :conditions => {:serie => id})
+    @series = true
+    @arr = Episode.find(:all)
     if @arr != []
       @arr.each do |line|
-        @answer[@answer.length] = [id,
-                                   line.tags.to_s,
-                                   line.name,
-                                   line.season*100 + line.episode_number]
+        if line.serie == id
+          @epi[@epi.length] = [id,
+                               line.name,
+                               line.description,
+                               line.season,
+                               line.episode_number,
+                               line.tags,
+                               line.serie,
+                               line.season*100 + line.episode_number]
+        end
       end
     end
   end
 
-  def research (params_array, length)
+  def research (params_array)
+    length = params_array.length - 1
     other = true
     for i in (0..length)
-      if ((params_array[i] == "in") && (i < length))
-        other = false
+      if ((params_array[i] == "in") && (i < length) && (i != 0))
         search_l(params_array[i+1..length])
         if (@answer.length != 0)
+          other = false
+          @answer = @answer.sort_by {|res| res[res.length.- 1]}
           search_episode(params_array[0..i-1], @answer[0][0])
-          @series = true;
-        else
-          @answer = []
+          @similar_research = params_array[0..i-1].join(" ") +" in "
         end
         break
       else
         if (params_array[i] == "or")
           if (i < length)
             search_l(params_array[0..i-1])
-            research(params_array[i+1..length], length - i)
+            research(params_array[i+1..length])
             other = false
           end
           break
@@ -212,17 +227,19 @@ class SearchController < ApplicationController
           if (params_array[i] == "all")
             if (i == length)
               other = false
+              @answer = []
               get_all()
+              @test = @answer.length
               @all = true
             else
               if ((i < length -1) && (params_array[i+1] = "in"))
-                research(params_array[i+2..length], length - i -1)
+                research(params_array[i+2..length])
                 other = false
                 if (@answer.length != 0)
+                  @answer = @answer.sort_by {|res| res[res.length.- 1]}
                   get_all_episode_from(@answer[0][0])
                   @all = true
-                else
-                  @answer = []
+                  @similar_research = "all in "
                 end
                 break
               end # else reseach
