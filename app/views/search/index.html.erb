@@ -10,7 +10,7 @@
    </head>
    <body<%= @body_extras %>>
      <center>
-       <%= image_tag "sdaw_big.png" %>
+       <a href="/home"><%= image_tag "sdaw_big.png" %></a>
        <br/><br/>
        </center>
      <div id="search_tool">
@@ -24,8 +24,13 @@
      <br/><br/>
      <hr/>
      <div class="research">
+       <!--Resultat de la recherche-->
        Il y a
-       <% l = @answer.length %>
+       <% if @series %>
+	     <% l = @epi.length %>
+	  <% else %>
+             <% l = @answer.length %>
+	  <% end %>
        <b> <%= l %></b>
        <% if l <= 1 %>
           r&eacute;sultat
@@ -35,11 +40,55 @@
        pour <b><%= @params %></b>
      </div>
      <% if l != 0 %>
-        <% @answer.sort_by {|res| res[res.length - 1]} %>
-        <% for i in 0..@answer.length - 1 do %>
-           <div>
-              <%= @answer[i][2].to_s %><br/>
-	   </div>
+        <% l = l - 1 %>
+        <% if @series %>
+	   <!-- Affichage par episodes -->
+	   <% @epi = @epi.sort_by {|res| res[res.length-1]} %>
+	   <% for i in 0..l do %>
+	      <div>
+	         <%= @answer[0][1] %> -
+		 <%= @epi[i][1] %> -
+		 <%= @epi[i][3] %>x<% if @epi[i][4] < 10 %>0<%= @epi[i][4] %>
+				   <% else %>
+				      <%= @epi[i][4] %>
+				   <% end %><br/>
+		 <%= @epi[i][2] %><br/>
+		 <% @epi[i][5].split.each do |tag| %>
+		    <a href="/search?method=post&q=<%= tag %>">[<%= tag %>]</a>
+		 <% end %><br/>
+		 <%= @answer[0][5] %> length
+	      </div>
+	      <br/>
+	   <% end %>==>
+	   <%= @test %> <==
+	   <!-- Recherche semblables -->
+	   <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
+	   <% l = @answer.length.- 1 %>
+	   <% if l > 0 %>
+              Recherche Similaire : (a tester)<br/>
+              <% for i in 0..l do %>
+	         <a href="/search?method=post&q=<%= @similar_research + @answer[i][7]%>">[<%= @answer[i][1] %>]</a>
+	      <% end %>
+           <% end %>
+	<% else %>
+	   <!-- Affichage par series -->
+           <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
+           <% for i in 0..l do %>
+              <div>
+	         <%= @answer[i][1] %> - <%= @answer[i][6] %>
+	         <% if @answer[i][2] %>
+	            [Film]
+	         <% else %>
+	            [S&eacute;rie]
+	         <% end %><br/>
+	         <%= @answer[i][3] %><br/>
+	         <% @answer[i][7].split.each do |tag| %>
+		    <a href="/search?method=post&q=<%= tag %>">[<%= tag %>]</a>
+		 <% end %><br/>
+	         <%= @answer[i][4] %> Seasons - <%= @answer[i][5] %> length
+              </div>
+	      <br/>
+	   <% end %>
 	<% end %>
      <% else%>
        We haven't find any Series or Episode for
