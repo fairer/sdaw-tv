@@ -1,7 +1,30 @@
-Recherche : <%= @params %><br/><br/>
-R&eacute;sultat :<br/>
-<% @answer.sort_by {|res| res[res.length - 1]} %>
-<% for i in 0..@answer.length - 1 do %>
-    <%= @answer[i][2].to_s %> <%= @answer[i][3] %><br/>
-<% end %>
-<%= @arr %>
+<!DOCTYPE html PUBLIC
+	  "-//W3C//DTD XHTML 1.0 Strict//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+   <head>
+       <title><%= @body_title || "SDAW TV is on his way..." %></title>
+       <%= stylesheet_link_tag 'main' %>
+       <%= javascript_include_tag :defaults %>
+      <%= javascript_include_tag 'prototype' %>
+   </head>
+   <body<%= @body_extras %>>
+     <center>
+       <%= image_tag "sdaw_big.png" %>
+       <br/><br/>
+       </center>
+     <div id="search_tool">
+       <% form_tag(:controller=>"search",
+       :action => "index",
+       :method => "post") do %>
+       <%= text_field_tag :q ,@params, :size=>"15" %>
+       <%= submit_tag("Research") %>
+       <% end %>
+     </div><br/><br/>
+       R&eacute;sultat :<br/>
+       <% @answer.sort_by {|res| res[res.length - 1]} %>
+       <% for i in 0..@answer.length - 1 do %>
+          <%= @answer[i][2].to_s %> <%= @answer[i][3] %><br/>
+       <% end %>
+   </body>
+</html>
