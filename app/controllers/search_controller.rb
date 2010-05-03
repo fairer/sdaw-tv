@@ -3,17 +3,11 @@
 ##                          Cadre qui ne sert a rien                         ##
 ##                                                                           ##
 ###############################################################################
-#
-#charactere spéciaux recherche -- Done
-#recherche all -- Done
-#recherche episode -- Done
-#recherche episode all
-#
-#
-#
+
 class SearchController < ApplicationController
 
   def initialize
+    @all = false
     @series = false
     #Keyboard Distance
     @keyboard_distance =
@@ -169,29 +163,30 @@ class SearchController < ApplicationController
     end
   end
 
-  def get_all() #à tester
+  def get_all()
     @arr = Video.get_all_names
     @arr.each do |@table|
       video = Video.find_last_by_name @table
       @answer[@answer.length] = [video.id.to_int,
                                  @table.to_s,
                                  video.name.to_s,
-                                 0.0]
+                                 video.id.to_int]
     end
   end
 
-##############################################################
-  def get_all_episode_from (id) #à tester
-    @arr = Video.find_all_by_serie(id)
-    @arr.each do |@table|
-      video = Video.find_last_by_name @table
-      @answer[@answer.length] = [video.id.to_int,
-                                 @table.to_s,
-                                 video.name.to_s,
-                                 0.0]
+  def get_all_episode_from (id)
+    @answer = []
+    @arr = Episode.find(:all, :conditions => {:serie => id})
+    if @arr != []
+      @arr.each do |line|
+        @answer[@answer.length] = [id,
+                                   line.tags.to_s,
+                                   line.name,
+                                   line.season*100 + line.episode_number]
+      end
     end
   end
-#############################################################
+
   def research (params_array, length)
     other = true
     for i in (0..length)
@@ -199,8 +194,10 @@ class SearchController < ApplicationController
         other = false
         search_l(params_array[i+1..length])
         if (@answer.length != 0)
-          search_episode(params_array[0..i-1], @answer[0][0])######
+          search_episode(params_array[0..i-1], @answer[0][0])
           @series = true;
+        else
+          @answer = []
         end
         break
       else
@@ -215,12 +212,20 @@ class SearchController < ApplicationController
           if (params_array[i] == "all")
             if (i == length)
               other = false
-              get_all() #à tester
+              get_all()
+              @all = true
             else
               if ((i < length -1) && (params_array[i+1] = "in"))
-                research(params_array[i+2..length], lengtj - i -1)
-                get_all_episode_from(@answer[0][0])############
-              end
+                research(params_array[i+2..length], length - i -1)
+                other = false
+                if (@answer.length != 0)
+                  get_all_episode_from(@answer[0][0])
+                  @all = true
+                else
+                  @answer = []
+                end
+                break
+              end # else reseach
             end
           end
         end
