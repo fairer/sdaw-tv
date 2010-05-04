@@ -75,11 +75,10 @@
 		   [No tags]<br/>
 		 <% end %>
 		 <span class="small">
-		   <%= @epi[i][8] %> length
+		   <%= @epi[i][8] / 60 %> length
 		 </span>
 	       </div><br/>
 	     <% end %>
-	     <br/><hr/>
 	     <!-- Recherche semblables -->
 	     <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
 	     <% l = @answer.length.- 1 %>
@@ -96,11 +95,24 @@
 	     <% end %>
 	   <% else %>
 	   <!-- Affichage par series -->
+	   <span class="now">Rouge</span>
 	   <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
 	   <% for i in start..e do %>
 	     <div>
 	       <%= @answer[i][1] %> - <%= @answer[i][6] %>
 	       [<% if @answer[i][2] %>Film<% else %>S&eacute;rie<% end %>]<br/>
+	       <% pl = false%>
+	       <% @pla.each do |lt|%>
+	         <% if lt[0] == @answer[i][0] %>
+		   <% pl = true %>
+		   <% date = lt[4] %>
+		 <% end %>
+	       <% end %>
+	       <% if pl %>
+	         <span class="now">
+	           <%= @answer[i][1] %> <%= date %><br/>
+		 </span>
+	       <% end %>
 	       <% if @answer[i][3] != "" %>
 	         <%= @answer[i][3] %><br/>
 	       <% else %>
@@ -115,29 +127,31 @@
 	       [No tags]<br/>
 	     <% end %>
 	     <span class="small">
-	       <%= @answer[i][4] %> Seasons - <%= @answer[i][5] %> length
+	       <%= @answer[i][4]%>
+	       Season<% if @answer[i][4] >= 2 %>s<% end %> -
+	       <%= @answer[i][5] / 60 %> length
 	     </span>
 	   </div><br/>
 	 <% end %>
-	 <!-- Pages -->
-	 <center>
-	   <%l = l / 10 + 1 %>
-	   <
-	     <% for i in 1..@p%>
-	       <a href="/search?method=post&q=<%= @params %>&p=<%= i-1 %>">
-	         <%= i %>
-	       </a>
-	     <% end %>
-	     <%= @p + 1 %>
-	     <% for i in @p+2..l %>
-	       <a href="/search?method=post&q=<%= @params %>&p=<%= i-1 %>">
-	         <%= i %>
-	       </a>
-	     <% end %>
-	   >
+       <% end %>
+       <!-- Pages -->
+       <center>
+	 <%l = l / 10 + 1 %>
+	 <
+	   <% for i in 1..@p%>
+	     <a href="/search?method=post&q=<%= @params %>&p=<%= i-1 %>">
+	       <%= i %>
+	     </a>
+	   <% end %>
+	   <%= @p + 1 %>
+	   <% for i in @p+2..l %>
+	     <a href="/search?method=post&q=<%= @params %>&p=<%= i-1 %>">
+	       <%= i %>
+	     </a>
+	   <% end %>
+	 >
 	 </center>
 	 <hr/>
-       <% end %>
      <% else%>
        We haven't find any Series or Episode for <b><%= @params %> </b>.
        <br/><br/>
@@ -148,12 +162,12 @@
 	 <li>few words</li>
        </ul>
      <% end %>
-    </div>==>
-    <%= @test%><==<br/>
-    <% @test.each do |line| %>
-      ==>start_date:<%= line.start_date.utc %><br/>
-                 id:<%= line.id %><br/>
-              video:<%= line.video %><==<br/>
+    </div>
+    Test recuperation planning :<br/>
+    <% @pla = @pla.sort_by {|res| res[0]}%>
+    <% @pla.each do |line| %>
+      <%= line[0]%><br/>
     <% end %>
+    <%= @pla %>s
   </body>
 </html>

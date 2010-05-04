@@ -198,11 +198,18 @@ a img
     font-size: 8px;
     overflow: hidden;
 }
+
 .research
 {
     text-align: right;
 }
+
 .small
 {
     font-size: 12px;
+}
+
+.now
+{
+    color: red;
 }

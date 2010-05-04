@@ -1,4 +1,3 @@
-
 class SearchController < ApplicationController
 
   def initialize
@@ -91,12 +90,21 @@ class SearchController < ApplicationController
 
   def index
     search()
+    make_planning()
     @p = (params[:p]).to_i
-    @test = Planning.find(:all)
     respond_to do |format|
       format.html
       format.xml {render :xml=> @videos}
     end
+  end
+
+  def make_planning
+    planning = Planning.find(:all)
+    @pla = []
+    planning.each do |line|
+      @pla[@pla.length] = line.video.split("_") + [line.start_date.utc]
+    end
+    @pla = @pla.sort_by {|res| res[0]}
   end
 
   def search_l (params_array)
@@ -134,13 +142,13 @@ class SearchController < ApplicationController
       @research_params = @params.split
       research(@research_params)
     end
-    @answer.sort_by {|res| res[res.length.- 1]}
-    @epi.sort_by {|res| res[res.length.- 1]}
+    @answer = @answer.sort_by {|res| res[res.length.- 1]}
+    @epi = @epi.sort_by {|res| res[res.length.- 1]}
   end
 
   def search_episode(params_array, id)
     @series = true
-    @arr = Episode.find(:all, :conditions => {:serie => id})
+    @arr = Episode.find(:all)
     if @arr != []
       @arr.each do |line|
         if line.serie == id
