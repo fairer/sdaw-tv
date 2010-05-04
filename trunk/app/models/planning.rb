@@ -14,7 +14,7 @@ class Planning < ActiveRecord::Base
       date = last_vid.start_date.utc
       now = Time.now.utc
       seek = (now - date)
-      if seek > (vid.average_episode_duration * 60) || seek < 0
+      if seek > (vid.average_episode_duration) || seek < 0
         return nil
       else
         return {:video => vid, :episode => episode, :start_date => date, :seek => seek}
@@ -32,7 +32,6 @@ class Planning < ActiveRecord::Base
         ads.push e
       end
     end
-    puts ads
     return ads[rand(ads.length)]
   end
 end

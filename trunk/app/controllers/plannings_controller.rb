@@ -38,4 +38,14 @@ class PlanningsController < ApplicationController
   def get_ad
     @ad = Planning.get_ad
   end
+
+  def clean
+    now = DateTime.now()
+    for v in Planning.all()
+      vid = Video.find(v.video.split('_')[0]);
+      if now > v.start_date + vid.average_episode_duration
+        Planning.delete(v.id)
+      end
+    end
+  end
 end
