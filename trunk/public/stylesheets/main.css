@@ -62,7 +62,12 @@ a img
 	width: 250px;
 	height: 40px;
 	font-size: 1.4em;
-	
+
+}
+
+#search
+{
+    float: right;
 }
 
 #breaking_news
@@ -196,4 +201,8 @@ a img
 .research
 {
     text-align: right;
+}
+.small
+{
+    font-size: 12px;
 }

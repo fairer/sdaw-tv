@@ -90,8 +90,9 @@ class SearchController < ApplicationController
   end
 
   def index
-    initialize
     search()
+    @p = (params[:p]).to_i
+    @test = Planning.find(:all)
     respond_to do |format|
       format.html
       format.xml {render :xml=> @videos}
@@ -127,6 +128,7 @@ class SearchController < ApplicationController
   end
 
   def search
+    initialize()
     @params = params[:q]
     if (@params != "")
       @research_params = @params.split
@@ -161,6 +163,8 @@ class SearchController < ApplicationController
                                  line.episode_number,
                                  line.tags,
                                  line.serie,
+                                 get_serie(id),
+                                 get_length(id),
                                  result / nb_word]
           end
         end
@@ -179,7 +183,7 @@ class SearchController < ApplicationController
                                  table.average_episode_duration.to_int,
                                  table.genre,
                                  table.tags,
-                                 rand()]
+                                 table.id]
     end
   end
 
@@ -196,7 +200,59 @@ class SearchController < ApplicationController
                                line.episode_number,
                                line.tags,
                                line.serie,
+                               get_serie(id),
+                               get_length(id),
                                line.season*100 + line.episode_number]
+        end
+      end
+    end
+  end
+
+  def get_length(id)
+    arr = Video.find(:all)
+    arr.each do |line|
+      if (line.id == id)
+        return line.average_episode_duration
+      end
+    end
+  end
+
+  def get_serie(id)
+    arr = Video.find(:all)
+    arr.each do |line|
+      if (line.id == id)
+        return line.name
+      end
+    end
+  end
+
+  def search_episode_where(params_array)
+    @series = true
+    @arr = Episode.find(:all)
+    if @arr != []
+      @arr.each do |line|
+        @table = line.tags.to_s
+        result = 0.0
+        nb_word = 0
+        @table.split.each do |@str|
+          params_array.each do |@search|
+            if distance
+              result = result + @distance
+              nb_word = nb_word + 1
+            end
+          end
+        end
+        if (nb_word != 0)
+          @epi[@epi.length] = [line.id,
+                               line.name,
+                               line.description,
+                               line.season,
+                               line.episode_number,
+                               line.tags,
+                               line.serie,
+                               get_serie(line.id),
+                               get_length(line.id),
+                               result / nb_word]
         end
       end
     end
@@ -207,12 +263,18 @@ class SearchController < ApplicationController
     other = true
     for i in (0..length)
       if ((params_array[i] == "in") && (i < length) && (i != 0))
-        search_l(params_array[i+1..length])
-        if (@answer.length != 0)
+        if ((i == length - 1) && (params_array[length]) == "all")
           other = false
-          @answer = @answer.sort_by {|res| res[res.length.- 1]}
-          search_episode(params_array[0..i-1], @answer[0][0])
-          @similar_research = params_array[0..i-1].join(" ") +" in "
+          @answer = []
+          search_episode_where(params_array[0..i-1])
+        else
+          search_l(params_array[i+1..length])
+          if (@answer.length != 0)
+            other = false
+            @answer = @answer.sort_by {|res| res[res.length.- 1]}
+            search_episode(params_array[0..i-1], @answer[0][0])
+            @similar_research = params_array[0..i-1].join(" ") +" in "
+          end
         end
         break
       else
