@@ -19,8 +19,12 @@
     <%= f.text_field :nb_seasons %>
   </p>
   <p>
-    <%= f.label "Average episode duration (in minutes)"%><br />
-    <%= f.text_field :average_episode_duration %>
+    <%= "Average time duration :" %><br />
+    <%= text_field_tag :time_min, 00, :size => 2 %> min
+    <%= text_field_tag :time_sec, 00, :size => 2 %> sec
+  </p>
+  <p>
+    <%= f.hidden_field :average_episode_duration %>
   </p>
   <p>
     <%= f.label :desc %><br />
@@ -58,4 +62,13 @@
 
   $('video_is_film').onchange = verify_checkbox;
   verify_checkbox();
+
+  function update_time() {
+    $('video_average_episode_duration').value =
+      parseInt($('time_min').value) * 60 + parseInt($('time_sec').value);
+  }
+
+  new Form.Element.Observer($('time_min'), 0.3, update_time);
+
+  new Form.Element.Observer($('time_sec'), 0.3, update_time);
 </script>

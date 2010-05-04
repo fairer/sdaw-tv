@@ -1,5 +1,4 @@
-// ID of the current played video. init to -1
-current_id = -1;
+last_vid_type = "ad";
 
 // Play the video
 $('play').onclick = function () {
@@ -36,7 +35,7 @@ function get_url() {
         asynchronous: false,
         onSuccess: function(response) {
             var tree = response.responseXML.firstChild;
-            if (tree.children.length != 0) {
+            if (tree.childNodes.length > 1) {
                 if (tree.getElementsByTagName('is-film')[0].firstChild.nodeValue == "true") {
                     url[0] = 'films/' + tree.getElementsByTagName('safe-name')[0].firstChild.nodeValue + '.flv';
                     url[1] = tree.getElementsByTagName('seek-time')[0].firstChild.nodeValue;
@@ -54,10 +53,12 @@ function get_url() {
                         'Episode ' + episode.getElementsByTagName('episode-number')[0].firstChild.nodeValue + ' : ' +
                          episode.getElementsByTagName('name')[0].firstChild.nodeValue;
                 }
+                last_vid_type = "video";
             }
             else {
                 url[0] = 'ads/' + find_ad();
                 url[1] = 0;
+                last_vid_type = "ad";
                 $('now').innerHTML = 'Advertisement. Please wait for programmation to start.';
             }
         },
@@ -71,7 +72,7 @@ function get_url() {
 // Play the next video in the database
 function changeVideo(url, seek)
 {
-    $('player').changeSource('/videos/' + url, seek)
+    $('player').changeSource('/videos/' + url, seek);
 }
 
 // After fully loaded the page :
@@ -79,10 +80,11 @@ function changeVideo(url, seek)
 // Record videos' urls in the *urls* array
 $('pause').hide();
 
-function get_urls(){}
-
 // This function is trigered when a video is finished
 function onVideoEnds() {
+    if (last_vid_type == "video") {
+        new Ajax.Request('plannings/clean/');
+    }
     var url = get_url();
     changeVideo(url[0], url[1]);
 }
@@ -107,8 +109,3 @@ function onVideoProgress(progress, total) {
     $('progress_bar').setStyle({'width': width + 'px'});
     $('progress').setStyle({'width': width_progress + 'px'});
 }
-
-// This function is trigered when the player is paused
-//function onPaused() {
-//    return null;
-//}
