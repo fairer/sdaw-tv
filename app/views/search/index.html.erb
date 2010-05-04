@@ -1,23 +1,23 @@
-<!DOCTYPE html PUBLIC
-	  "-//W3C//DTD XHTML 1.0 Strict//EN"
-	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	              "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
    <head>
        <title><%= @body_title || "SDAW TV is on his way..." %></title>
        <%= stylesheet_link_tag 'main' %>
        <%= javascript_include_tag :defaults %>
-      <%= javascript_include_tag 'prototype' %>
+       <%= javascript_include_tag 'prototype' %>
    </head>
    <body<%= @body_extras %>>
      <center>
        <a href="/home"><%= image_tag "sdaw_big.png" %></a>
        <br/><br/>
        </center>
-     <div id="search_tool">
+     <!-- Search Tool -->
+     <div id="search">
        <% form_tag(:controller=>"search",
        :action => "index",
        :method => "post") do %>
-       <%= text_field_tag :q ,@params, :size=>"15" %>
+       <%= text_field_tag :q , @params, :size=>"15" %>
        <%= submit_tag("Research") %>
        <% end %>
      </div>
@@ -27,78 +27,133 @@
        <!--Resultat de la recherche-->
        Il y a
        <% if @series %>
-	     <% l = @epi.length %>
-	  <% else %>
-             <% l = @answer.length %>
-	  <% end %>
-       <b> <%= l %></b>
-       <% if l <= 1 %>
-          r&eacute;sultat
+         <% l = @epi.length %>
        <% else %>
-          r&eacute;sultats
+         <% l = @answer.length %>
        <% end %>
+       <b><%= l %></b>
+       r&eacute;sultat<% if l > 1 %>s<% end %>
        pour <b><%= @params %></b>
      </div>
-     <% if l != 0 %>
-        <% l = l - 1 %>
-        <% if @series %>
+     <div>
+       <!-- Gestion affichage de la page -->
+       <% if (@p <= l / 10) %>
+	 <% start = @p*10 %>
+       <% else %>
+         <% start = (l/10)*10 %>
+       <% end %>
+       <% if (start + 9 < l) %>
+	  <% e = start + 9 %>
+       <% else %>
+         <% e = l-1 %>
+       <% end %>
+       <% if l != 0 %>
+	 <% if @series %>
 	   <!-- Affichage par episodes -->
 	   <% @epi = @epi.sort_by {|res| res[res.length-1]} %>
-	   <% for i in 0..l do %>
-	      <div>
-	         <%= @answer[0][1] %> -
+	     <% for i in start..e do %>
+	       <div>
+		 <%= @epi[i][7] %> -
 		 <%= @epi[i][1] %> -
-		 <%= @epi[i][3] %>x<% if @epi[i][4] < 10 %>0<%= @epi[i][4] %>
-				   <% else %>
-				      <%= @epi[i][4] %>
-				   <% end %><br/>
-		 <%= @epi[i][2] %><br/>
-		 <% @epi[i][5].split.each do |tag| %>
-		    <a href="/search?method=post&q=<%= tag %>">[<%= tag %>]</a>
-		 <% end %><br/>
-		 <%= @answer[0][5] %> length
-	      </div>
-	      <br/>
-	   <% end %>==>
-	   <%= @test %> <==
-	   <!-- Recherche semblables -->
-	   <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
-	   <% l = @answer.length.- 1 %>
-	   <% if l > 0 %>
-              Recherche Similaire : (a tester)<br/>
-              <% for i in 0..l do %>
-	         <a href="/search?method=post&q=<%= @similar_research + @answer[i][7]%>">[<%= @answer[i][1] %>]</a>
-	      <% end %>
-           <% end %>
-	<% else %>
-	   <!-- Affichage par series -->
-           <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
-           <% for i in 0..l do %>
-              <div>
-	         <%= @answer[i][1] %> - <%= @answer[i][6] %>
+		 <% if @epi[i][4] < 10 %>
+		   <% t = "0" + @epi[i][4].to_s%>
+		 <% else %>
+		   <% t = @epi[i][4].to_s %>
+		 <% end %>
+		 <%= @epi[i][3] %>x<%= t %><br/>
+		 <% if @epi[i][2] != "" %>
+		   <%= @epi[i][2] %><br/>
+		 <% else %>
+		   No description<br/>
+		 <% end %>
+		 <% if @epi[i][5] != "" %>
+		   <% @epi[i][5].split.each do |tag| %>
+		     <a href="/search?method=post&q=<%= tag %>">[<%= tag %>]
+		     </a>
+		   <% end %><br/>
+		 <% else %>
+		   [No tags]<br/>
+		 <% end %>
+		 <span class="small">
+		   <%= @epi[i][8] %> length
+		 </span>
+	       </div><br/>
+	     <% end %>
+	     <br/><hr/>
+	     <!-- Recherche semblables -->
+	     <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
+	     <% l = @answer.length.- 1 %>
+	     <% if l > 0 %>
+	       Recherche associ&eacute;e &agrave; <b><%= @params %></b><br/>
+	       <% for i in 1..l do %>
 	         <% if @answer[i][2] %>
-	            [Film]
-	         <% else %>
-	            [S&eacute;rie]
-	         <% end %><br/>
+		   <a href="/search?method=post&q=<%= @answer[i][7] %>">
+		 <% else %>
+		   <a href="/search?method=post&q=<%= @similar_research +
+			    @answer[i][7] %>">
+		 <% end %>[<%= @answer[i][1] %>]</a>
+	       <% end %>
+	     <% end %>
+	   <% else %>
+	   <!-- Affichage par series -->
+	   <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
+	   <% for i in start..e do %>
+	     <div>
+	       <%= @answer[i][1] %> - <%= @answer[i][6] %>
+	       [<% if @answer[i][2] %>Film<% else %>S&eacute;rie<% end %>]<br/>
+	       <% if @answer[i][3] != "" %>
 	         <%= @answer[i][3] %><br/>
+	       <% else %>
+	         No description<br/>
+	       <% end %>
+	       <% if @answer[i][7] != "" %>
 	         <% @answer[i][7].split.each do |tag| %>
-		    <a href="/search?method=post&q=<%= tag %>">[<%= tag %>]</a>
-		 <% end %><br/>
-	         <%= @answer[i][4] %> Seasons - <%= @answer[i][5] %> length
-              </div>
-	      <br/>
-	   <% end %>
-	<% end %>
+		 <a href="/search?method=post&q=<%= tag %>">[<%= tag %>]
+		 </a>
+	       <% end %><br/>
+	     <% else %>
+	       [No tags]<br/>
+	     <% end %>
+	     <span class="small">
+	       <%= @answer[i][4] %> Seasons - <%= @answer[i][5] %> length
+	     </span>
+	   </div><br/>
+	 <% end %>
+	 <!-- Pages -->
+	 <center>
+	   <%l = l / 10 + 1 %>
+	   <
+	     <% for i in 1..@p%>
+	       <a href="/search?method=post&q=<%= @params %>&p=<%= i-1 %>">
+	         <%= i %>
+	       </a>
+	     <% end %>
+	     <%= @p + 1 %>
+	     <% for i in @p+2..l %>
+	       <a href="/search?method=post&q=<%= @params %>&p=<%= i-1 %>">
+	         <%= i %>
+	       </a>
+	     <% end %>
+	   >
+	 </center>
+	 <hr/>
+       <% end %>
      <% else%>
-       We haven't find any Series or Episode for
-           <b> <%= @params %> </b>.<br/><br/>
+       We haven't find any Series or Episode for <b><%= @params %> </b>.
+       <br/><br/>
        Try again, with <br/>
        <ul>
-          <li>another spelling</li>
-          <li>another words</li>
-          <li>few words</li>
+	 <li>another spelling</li>
+	 <li>another words</li>
+	 <li>few words</li>
        </ul>
      <% end %>
-   </body>
+    </div>==>
+    <%= @test%><==<br/>
+    <% @test.each do |line| %>
+      ==>start_date:<%= line.start_date.utc %><br/>
+                 id:<%= line.id %><br/>
+              video:<%= line.video %><==<br/>
+    <% end %>
+  </body>
 </html>
