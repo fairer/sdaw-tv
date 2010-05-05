@@ -1,3 +1,4 @@
+##
 class SearchController < ApplicationController
 
   def initialize
