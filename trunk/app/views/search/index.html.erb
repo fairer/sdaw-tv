@@ -17,7 +17,7 @@
        <% form_tag(:controller=>"search",
        :action => "index",
        :method => "post") do %>
-       <%= text_field_tag :q , @params, :size=>"15" %>
+       <%= text_field_tag :q , @params, :size => "15" %>
        <%= submit_tag("Research") %>
        <% end %>
      </div>
@@ -47,6 +47,8 @@
        <% else %>
          <% e = l-1 %>
        <% end %>
+
+
        <% if l != 0 %>
 	 <% if @series %>
 	   <!-- Affichage par episodes -->
@@ -61,6 +63,59 @@
 		   <% t = @epi[i][4].to_s %>
 		 <% end %>
 		 <%= @epi[i][3] %>x<%= t %><br/>
+		 <!-- A tester -->
+	         <% pl = false%>
+	         <% @pla.each do |lt|%>
+	           <% if (lt[0].to_i == @answer[i][7]) &&
+		         (lt[1].to_i == @answer[i][3]) &&
+		         (lt[2].to_i == @answer[i][4])%>
+		     <% pl = true %>
+		     <% date = lt[3] %>
+		   <% end %>
+	         <% end %>
+	         <% if pl %>
+	           <span class="now">
+		     <% now = Time.now %>
+		     <% if date.year == now.year%>
+		       <% if date.month == now.month %>
+		         <% if date.day == now.day %>
+		           programmed for <%= date.hour %>:<%= date.min %>
+		         <% else %>
+		           Programmed for
+		           <%= ["monday",
+			        "tuesday",
+			        "wednesday",
+			        "thursday",
+			        "friday",
+			        "saturday",
+			        "sunday"][date.wday]%>
+			   <% if date.day > now.day + 6 %>
+                             <%= date.day %>
+                           <% end %>
+		  	   at <%= date.hour %>:<%= date.min %>
+		         <% end %>
+		       <% else %>
+		         programmed for |mois|
+		         <%= ["january",
+			      "february",
+			      "march",
+			      "april",
+			      "may",
+			      "june",
+			      "july",
+			      "august",
+			      "september",
+			      "october",
+			      "november",
+			      "secember"][date.month - 1] %>
+		       <% end %>
+		     <% else %>
+		       programmed for <%= date.year %>
+		     <% end %>
+		     <br/>
+		   </span>
+	         <% end %>
+		 <!-- Fin a tester -->
 		 <% if @epi[i][2] != "" %>
 		   <%= @epi[i][2] %><br/>
 		 <% else %>
@@ -75,7 +130,11 @@
 		   [No tags]<br/>
 		 <% end %>
 		 <span class="small">
-		   <%= @epi[i][8] / 60 %> length
+		   <% if (@epi[i][8] / 3600 != 0) %>
+		     <%= @epi[i][8] / 3600 %> hours
+		   <% end %>
+		   <%= (@epi[i][8] / 60) % 60 %> minutes
+		   <%=  @epi[i][8] % 60 %> seconds
 		 </span>
 	       </div><br/>
 	     <% end %>
@@ -95,24 +154,80 @@
 	     <% end %>
 	   <% else %>
 	   <!-- Affichage par series -->
-	   <span class="now">Rouge</span>
+	   <% date = Time.now %>
 	   <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
 	   <% for i in start..e do %>
+	   <!--et_serie(line.id)-->
 	     <div>
 	       <%= @answer[i][1] %> - <%= @answer[i][6] %>
 	       [<% if @answer[i][2] %>Film<% else %>S&eacute;rie<% end %>]<br/>
+
+	       <!-- Affichage planning -->
 	       <% pl = false%>
+	       <% e = 0 %>
+	       <% s = 0 %>
 	       <% @pla.each do |lt|%>
-	         <% if lt[0] == @answer[i][0] %>
-		   <% pl = true %>
-		   <% date = lt[4] %>
+	         <% if lt[0].to_i == @answer[i][0] %>
+		  <% if pl %>
+		    <% if lt[3] < date %>
+		      <% e = lt[2].to_i %>
+		      <% s = lt[1].to_i %>
+		      <% date = lt[3] %>
+		    <% end %>
+		  <% else %>
+		    <% pl = true %>
+		    <% e = lt[2].to_i %>
+		    <% s = lt[1].to_i %>
+		    <% date = lt[3] %>
+		  <% end %>
 		 <% end %>
 	       <% end %>
 	       <% if pl %>
 	         <span class="now">
-	           <%= @answer[i][1] %> <%= date %><br/>
+	           <% if (e != 0) && (s != 0)%>
+		     Episode <%= s %>x<%= e %>
+		   <% end %>
+		   <% now = Time.now %>
+		   <% if date.year == now.year%>
+		     <% if date.month == now.month %>
+		       <% if date.day == now.day %>
+		         programmed for <%= date.hour %>:<%= date.min %>
+		       <% else %>
+		         Programmed for
+		         <%= ["monday",
+			      "tuesday",
+			      "wednesday",
+			      "thursday",
+			      "friday",
+			      "saturday",
+			      "sunday"][date.wday]%>
+			 <% if date.day > now.day + 6 %>
+                           <%= date.day %>
+                         <% end %>
+			 at <%= date.hour %>:<%= date.min %>
+		       <% end %>
+		     <% else %>
+		       programmed for |mois|
+		       <%= ["january",
+			    "february",
+			    "march",
+			    "april",
+			    "may",
+			    "june",
+			    "july",
+			    "august",
+			    "september",
+			    "october",
+			    "november",
+			    "secember"][date.month - 1] %>
+		     <% end %>
+		   <% else %>
+		     programmed for <%= date.year %>
+		   <% end %>
+		   <br/>
 		 </span>
 	       <% end %>
+
 	       <% if @answer[i][3] != "" %>
 	         <%= @answer[i][3] %><br/>
 	       <% else %>
@@ -127,9 +242,15 @@
 	       [No tags]<br/>
 	     <% end %>
 	     <span class="small">
-	       <%= @answer[i][4]%>
-	       Season<% if @answer[i][4] >= 2 %>s<% end %> -
-	       <%= @answer[i][5] / 60 %> length
+	       <% if !@answer[i][2] %>
+	         <%= @answer[i][4]%>
+	         Season<% if @answer[i][4] >= 2 %>s<% end %> -
+               <% end %>
+	       <% if (@answer[i][5] / 3600 != 0) %>
+	         <%= @answer[i][5] / 3600 %> hours
+	       <% end %>
+	       <%= (@answer[i][5] / 60) % 60%> minutes
+	       <%= @answer[i][5] % 60 %> seconds
 	     </span>
 	   </div><br/>
 	 <% end %>
@@ -163,11 +284,5 @@
        </ul>
      <% end %>
     </div>
-    Test recuperation planning :<br/>
-    <% @pla = @pla.sort_by {|res| res[0]}%>
-    <% @pla.each do |line| %>
-      <%= line[0]%><br/>
-    <% end %>
-    <%= @pla %>s
   </body>
 </html>
