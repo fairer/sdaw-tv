@@ -102,7 +102,7 @@ class SearchController < ApplicationController
     planning = Planning.find(:all)
     @pla = []
     planning.each do |line|
-      @pla[@pla.length] = line.video.split("_") + [line.start_date.utc]
+      @pla[@pla.length] = line.video.split("_") + [line.start_date]
     end
     @pla = @pla.sort_by {|res| res[0]}
   end
