@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'plannings/get_ad.:format', :controller => 'plannings', :action => 'get_ad'
   map.connect 'plannings/now.:format', :controller => 'plannings', :action => 'now'
   map.connect 'plannings/clean', :controller => 'plannings', :action => 'clean'
+  map.connect 'plannings/test', :controller => 'plannings', :action => 'test'
   map.resources :plannings
   map.connect 'planning/:action', :controller => 'plannings'
   map.resources :videos

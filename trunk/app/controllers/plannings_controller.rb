@@ -48,4 +48,11 @@ class PlanningsController < ApplicationController
       end
     end
   end
+
+  def test
+    v = Planning.find(:all)[0]
+    puts 'LOLOLOL'
+    puts v.start_date
+    puts v.start_date.strftime("%A")
+  end
 end
