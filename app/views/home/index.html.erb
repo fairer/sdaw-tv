@@ -5,6 +5,7 @@
  		<%= stylesheet_link_tag 'main' %>
  		<%= javascript_include_tag :defaults %>
       <%= javascript_include_tag 'prototype' %>
+     
 		 
    </head>
    <body<%= @body_extras %>>
@@ -63,16 +64,62 @@
 				</div>
 			</div>
 			<div id="left">
-				<div id="left_up">
-					
-					<%= image_tag "right_arrow.png" %>
-					View the
-					<%= link_to_function("chat") do |page|
-			 			page.visual_effect(:fade, "left_up")
-			 			end
-					%>
-					<%= image_tag "chat.png" %>
+				<div id="left_up" >
+
+				<span id="chat">
+						<%= image_tag "right_arrow.png" %>
+						View the
+						<%= link_to_function("chat") do |page|
+				 			page.hide "chat"
+                                                        page.visual_effect(:appear, "chat_menu")
+							page.visual_effect(:appear, "chat_replacement")
+				 			end
+						%>
+						<%= image_tag "chat.png" %>
+					</span>
+                                                                          <script type="text/javascript">
+                                            function printChat () {
+                                            new Ajax.Request('/chats/index', {
+                                              onSuccess: function(response) {
+                                                var res = response.responseText;
+                                                $("lol").innerHTML = res;
+                                              }
+                                            });
+                                            }
+
+                                            </script>
+                                  <span id="chat_menu">
+                                      <%= link_to_function("Close chat:") do |page|
+							page.hide "chat_replacement"
+                                                        page.hide "chat_menu"
+							page.visual_effect(:appear, "chat")
+							end
+						%>
+                                    <%= link_to_function("Refresh") do |page|
+                                        page.replace_html "chat_replacement", "<div id=\"lol\" style=\"overflow:auto; height:556px;width:250px;\"></div>
+                                            <script type=\"text/javascript\">
+          
+                                            printChat();
+                                            </script>"
+                                    end %>
+              
+                                  </span>
+					<span id="chat_replacement">
+                                            <div id="lol" style="overflow:auto; height:556px;width:250px;">Error : Getting the chat</div>
+                                            <script type="text/javascript">
+          
+                                            printChat();
+                                            </script>
+
+					</span>
+						<%= update_page_tag do |page|
+								  page.hide "chat_replacement"
+                                                                  page.hide "chat_menu"
+							 end
+						%>
 				</div>
+				</div>
+                </div>
 				<div id="left_mid">
 					<%= image_tag "pub1.png" %>
 				</div>
