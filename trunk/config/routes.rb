@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :chats
+  map.resources :posts, :has_many => :comments
   map.resources :episodes
 
   map.connect 'plannings/get_ad.:format', :controller => 'plannings', :action => 'get_ad'

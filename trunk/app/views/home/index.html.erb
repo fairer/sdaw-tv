@@ -64,15 +64,48 @@
 			</div>
 			<div id="left">
 				<div id="left_up">
-					
-					<%= image_tag "right_arrow.png" %>
-					View the
-					<%= link_to_function("chat") do |page|
-			 			page.visual_effect(:fade, "left_up")
-			 			end
-					%>
-					<%= image_tag "chat.png" %>
+
+				<span id="chat">
+						<%= image_tag "right_arrow.png" %>
+						View the
+						<%= link_to_function("chat") do |page|
+				 			page.hide "chat"
+							page.visual_effect(:appear, "chat_replacement")
+				 			end
+						%>
+						<%= image_tag "chat.png" %>
+					</span>
+					<span id="chat_replacement">
+
+						<%= link_to_function("Chat:") do |page|
+							page.hide "chat_replacement"
+							page.visual_effect(:appear, "chat")
+							end
+						%>
+
+
+
+                                            <div id="lol">Error : Getting the chat</div>
+                                            <script type="text/javascript">
+                                            function printChat () {
+                                            new Ajax.Request('/chats/index', {
+                                              onSuccess: function(response) {
+                                                var res = response.responseText;
+                                                $("lol").innerHTML = res;
+                                              }
+                                            });
+                                            }
+                                            printChat();
+                                            </script>
+
+					</span>
+						<%= update_page_tag do |page|
+								  page.hide "chat_replacement"
+							 end
+						%>
 				</div>
+				</div>
+                </div>
 				<div id="left_mid">
 					<%= image_tag "pub1.png" %>
 				</div>
