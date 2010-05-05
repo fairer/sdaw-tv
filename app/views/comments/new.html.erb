@@ -3,9 +3,10 @@
 <% form_for(@comment) do |f| %>
   <%= f.error_messages %>
 
+
   <p>
-    <%= f.label :post_id %><br />
-    <%= f.text_field :post_id %>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
   </p>
   <p>
     <%= f.label :body %><br />

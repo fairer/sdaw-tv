@@ -6,8 +6,9 @@
 <p>
   <b>Body:</b>
   <%=h @comment.body %>
+  <b>Author:</b>
+  <%=h @comment.author %>
 </p>
 
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
