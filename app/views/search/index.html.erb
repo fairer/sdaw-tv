@@ -81,38 +81,44 @@
 		         <% if date.day == now.day %>
 		           programmed for <%= date.hour %>:<%= date.min %>
 		         <% else %>
-		           Programmed for
-		           <%= ["monday",
-			        "tuesday",
-			        "wednesday",
-			        "thursday",
-			        "friday",
-			        "saturday",
-			        "sunday"][date.wday]%>
-			   <% if date.day > now.day + 6 %>
-                             <%= date.day %>
-                           <% end %>
-		  	   at <%= date.hour %>:<%= date.min %>
+			   <% if date.day > now.day %>
+		             Programmed for
+		             <%= ["monday",
+			          "tuesday",
+			          "wednesday",
+			          "thursday",
+			          "friday",
+			          "saturday",
+			          "sunday"][date.wday]%>
+			     <% if date.day > now.day + 6 %>
+                               <%= date.day %>
+                             <% end %>
+		  	     at <%= date.hour %>:<%= date.min %>
+			     <br/>
+			   <% end %>
 		         <% end %>
 		       <% else %>
-		         programmed for |mois|
-		         <%= ["january",
-			      "february",
-			      "march",
-			      "april",
-			      "may",
-			      "june",
-			      "july",
-			      "august",
-			      "september",
-			      "october",
-			      "november",
-			      "secember"][date.month - 1] %>
+		         <% if date.motn > now.month %>
+		           programmed for |mois|
+		           <%= ["january",
+			        "february",
+			        "march",
+			        "april",
+			        "may",
+			        "june",
+			        "july",
+			        "august",
+			        "september",
+			        "october",
+			        "november",
+			        "secember"][date.month - 1] %>
+			   <br/>
+		         <% end %>
 		       <% end %>
 		     <% else %>
 		       programmed for <%= date.year %>
+		       <br/>
 		     <% end %>
-		     <br/>
 		   </span>
 	         <% end %>
 		 <!-- Fin a tester -->
@@ -193,38 +199,44 @@
 		       <% if date.day == now.day %>
 		         programmed for <%= date.hour %>:<%= date.min %>
 		       <% else %>
-		         Programmed for
-		         <%= ["monday",
-			      "tuesday",
-			      "wednesday",
-			      "thursday",
-			      "friday",
-			      "saturday",
-			      "sunday"][date.wday]%>
-			 <% if date.day > now.day + 6 %>
-                           <%= date.day %>
-                         <% end %>
-			 at <%= date.hour %>:<%= date.min %>
+		         <% if date.day > now.day %>
+		           Programmed for
+		           <%= ["monday",
+			        "tuesday",
+			        "wednesday",
+			        "thursday",
+			        "friday",
+			        "saturday",
+			        "sunday"][date.wday]%>
+			   <% if date.day > now.day + 6 %>
+                             <%= date.day %>
+                           <% end %>
+			   at <%= date.hour %>:<%= date.min %>
+			   <br/>
+		         <% end %>
 		       <% end %>
 		     <% else %>
-		       programmed for |mois|
-		       <%= ["january",
-			    "february",
-			    "march",
-			    "april",
-			    "may",
-			    "june",
-			    "july",
-			    "august",
-			    "september",
-			    "october",
-			    "november",
-			    "secember"][date.month - 1] %>
+		       <% if date.month > mow.month %>
+		         programmed for |mois|
+		         <%= ["january",
+			      "february",
+			      "march",
+			      "april",
+			      "may",
+			      "june",
+			      "july",
+			      "august",
+			      "september",
+			      "october",
+			      "november",
+			      "secember"][date.month - 1] %>
+			 <br/>
+		       <% end %>
 		     <% end %>
 		   <% else %>
 		     programmed for <%= date.year %>
+		     <br/>
 		   <% end %>
-		   <br/>
 		 </span>
 	       <% end %>
 
