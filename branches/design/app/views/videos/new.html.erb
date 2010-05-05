@@ -1,0 +1,74 @@
+<h1>New video</h1>
+
+<% form_for(@video, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.hidden_field :safe_name %>
+  </p>
+  <p>
+    <%= f.label :tags %><br />
+    <%= f.text_area :tags %>
+  </p>
+  <p>
+    <%= f.label :nb_seasons %><br />
+    <%= f.text_field :nb_seasons %>
+  </p>
+  <p>
+    <%= "Average time duration :" %><br />
+    <%= text_field_tag :time_min, 00, :size => 2 %> min
+    <%= text_field_tag :time_sec, 00, :size => 2 %> sec
+  </p>
+  <p>
+    <%= f.hidden_field :average_episode_duration %>
+  </p>
+  <p>
+    <%= f.label :desc %><br />
+    <%= f.text_area :desc %>
+  </p>
+  <p>
+    <%= f.label :genre %><br />
+    <%= f.text_field :genre %>
+  </p>
+  <p>
+    <%= f.label "This video is a film :"%>
+    <%= f.check_box :is_film %>
+  </p>
+  <p id="file_upload">
+    <%= "Upload file here :"%>
+    <%= file_field_tag 'file' %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', videos_path %>
+
+  <%= javascript_include_tag 'prototype'  %>
+<script type="text/javascript">
+  function verify_checkbox() {
+    if ($('video_is_film').checked) {
+      $('file_upload').show();
+    }
+    else {
+      $('file_upload').hide();
+    }
+  }
+
+  $('video_is_film').onchange = verify_checkbox;
+  verify_checkbox();
+
+  function update_time() {
+    $('video_average_episode_duration').value =
+      parseInt($('time_min').value) * 60 + parseInt($('time_sec').value);
+  }
+
+  new Form.Element.Observer($('time_min'), 0.3, update_time);
+
+  new Form.Element.Observer($('time_sec'), 0.3, update_time);
+</script>

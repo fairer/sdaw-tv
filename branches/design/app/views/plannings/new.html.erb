@@ -1,0 +1,27 @@
+<h1>Add video to the planning</h1>
+
+<% form_for(@video) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= label :name, "Start tiping serie or film name : " %><br />
+    <%= text_field_tag :name, '' %>
+  </p>
+  <div id="results"></div>
+  <p>
+<%= f.label :start_date %> <strong>(Use UTC !)</strong> :<br/>
+    <%= f.datetime_select :start_date %><br/>
+    Please note that actual UTC is :<br/>
+    <span id="now"></span>
+  </p>
+  <p>
+    
+  </p>
+  <p>
+    <%= f.submit 'Add', :disabled => :true %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', '/' %>
+
+  <%= javascript_include_tag "planning_new"  %>

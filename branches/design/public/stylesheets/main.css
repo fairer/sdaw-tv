@@ -1,0 +1,215 @@
+body
+{
+	width: 994px;
+	margin: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: rgb(255,233,160);
+	background-image: url("background.png");
+	background-attachment: fixed;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+a:focus
+{
+	color: purple;
+}
+
+a img
+{
+    border: none;
+}
+
+#header
+{
+	width: 994px;
+	height: 100px;
+}
+
+#upper_right
+{
+	width: 250px:
+	float: right;
+	padding: 6px;
+	width: 250px;
+	height: 40px;
+}
+
+#upper_left
+{
+	width: 744px;
+}
+
+#title
+{
+	text-align: center;
+}
+
+#search_tool
+{
+	float: right;
+	width: 250px;
+	height: 40px;
+	font-size: 1.4em;
+
+}
+
+#search
+{
+    float: right;
+}
+
+#breaking_news
+{
+	padding-left: 4px;
+}
+
+#breaking_news_title
+{
+	color: rgb(200,20,30);
+	font-size: 1.8em;
+	font-family: Trebuchet MS, serif;
+	text-decoration: underline;
+}
+
+#breaking_news_text
+{
+	font-size: 1.6em;
+	font-family: Arial, Courier News, serif;
+	overflow: hidden;
+}
+
+#past_news
+{
+	margin-top: 4px;
+	padding-left: 20px;
+}
+
+#past_news_text
+{
+	font-size: 1.2em;
+}
+
+#right_up
+{
+	width: 600px;
+	float: right;
+	margin: right;
+	margin-right: 20px;
+	padding: 0px;
+}
+
+#right_bot
+{
+	float: right;
+	width: 600px;
+	padding: 20px;
+	margin-top: 40px;
+}
+
+#left
+{
+	width: 394px;
+}
+
+#left_up
+{
+	margin-top: 80px;
+	margin-bottom: 30px;
+	margin-left: 10px;
+	font-size: 1.6em;
+}
+
+#left_bot
+{
+	padding-left: 40px;
+	padding-top: 40px;
+}
+
+#footer
+{
+	text-align: center;
+}
+
+.italic
+{
+	font-style: italic;
+}
+
+#results
+{
+    border: 1px solid black;
+    margin-left: 10px;
+    padding: 0 20px;
+}
+
+#results em
+{
+    margin-left: 10px;
+}
+
+#progress_bar
+{
+    width: 392px;
+    height: 13px;
+    float: left;
+    border-top:    1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 1px 4px;
+    margin: 0;
+}
+
+#progress_bar #progress
+{
+    width: 0;
+    height: 13px;
+    background: url('../images/progress.png') repeat-x;
+}
+
+#player_toolbar
+{
+    width: 480px;
+}
+
+#player_toolbar img
+{
+    width: 17px;
+    height: 17px;
+    float: left;
+}
+
+#time
+{
+    height: 13px;
+    float: right;
+    border: 1px solid gray;
+    padding: 1px 3px;
+    font-size: 8px;
+    overflow: hidden;
+}
+
+.research
+{
+    text-align: right;
+}
+
+.small
+{
+    font-size: 12px;
+}
+
+.now
+{
+    color: red;
+}

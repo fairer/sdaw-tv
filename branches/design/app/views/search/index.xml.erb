@@ -1,0 +1,61 @@
+<%
+films  = []
+series = []
+for i in 0..@answer.length - 1 do 
+  vid = Video.find(@answer[i][0])
+  if vid.is_film
+    films.push [vid,@answer[i][3]]
+  else 
+    series.push [vid,@answer[i][3]]
+  end
+end
+%>
+
+<results>
+<% if films.length != 0 %>
+  <films>
+    <% for film in films %>
+      <film>
+        <%= "<mark>" +      film[1].to_s +           "</mark>" %>
+        <%= "<id>" +        film[0].id.to_s +        "</id>" %>
+        <%= "<safe_name>" + film[0].safe_name.to_s + "</safe_name>" %>
+        <%= "<name>" +      film[0].name.to_s +      "</name>" %>
+        <%= "<tags>" +      film[0].tags.to_s +      "</tags>" %>
+        <%= "<nb_seasons>" +      film[0].nb_seasons.to_s +      "</nb_seasons>" %>
+        <%= "<duration>" +      film[0].average_episode_duration.to_s +      "</duration>" %>
+        <%= "<description>" +      film[0].desc.to_s +      "</description>" %>
+        <%= "<genre>" +      film[0].genre.to_s +      "</genre>" %>
+      </film>
+    <% end %>
+  </films>
+<% end %>
+<% if series.length != 0 %>
+  <series>
+    <% for serie in series %>
+      <serie>
+        <%= "<mark>" +      serie[1].to_s +           "</mark>" %>
+        <%= "<id>" +        serie[0].id.to_s +        "</id>" %>
+        <%= "<safe_name>" + serie[0].safe_name.to_s + "</safe_name>" %>
+        <%= "<name>" +      serie[0].name.to_s +      "</name>" %>
+        <%= "<tags>" +      serie[0].tags.to_s +      "</tags>" %>
+        <%= "<nb_seasons>" +      serie[0].nb_seasons.to_s +      "</nb_seasons>" %>
+        <%= "<duration>" +      serie[0].average_episode_duration.to_s +      "</duration>" %>
+        <%= "<description>" +      serie[0].desc.to_s +      "</description>" %>
+        <%= "<genre>" +      serie[0].genre.to_s +      "</genre>" %>
+        <episodes>
+          <% episodes = Episode.find_all_by_serie serie[0].id, {:order => 'season, episode_number' } %>
+          <% for episode in episodes %>
+            <episode>
+              <%= "<name>" +      episode.name.to_s +      "</name>" %>
+              <%= "<season>" +      episode.season.to_s +      "</season>" %>
+              <%= "<number>" +      episode.episode_number.to_s +      "</number>" %>
+              <%= "<tags>" +      episode.tags.to_s +      "</tags>" %>
+              <%= "<description>" +      episode.description.to_s +      "</description>" %>
+            </episode>
+          <% end %>
+        </episodes>
+      </serie>
+    <% end %>
+  </series>
+<% end %>
+</results>

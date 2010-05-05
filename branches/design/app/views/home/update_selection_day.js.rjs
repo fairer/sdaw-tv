@@ -1,0 +1,4 @@
+page.show "select_period"
+page.show "selection"
+page.hide "select_day"
+page.insert_html :bottom, "selection", @day

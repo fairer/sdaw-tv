@@ -1,0 +1,46 @@
+<p>
+  <b>Name:</b>
+  <%=h @video.name %>
+</p>
+
+<p>
+  <b>Safe name:</b>
+  <%=h @video.safe_name %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%=h @video.tags %>
+</p>
+
+<p>
+  <b>Nb seasons:</b>
+  <%=h @video.nb_seasons %>
+</p>
+
+<p>
+  <b>Average episode duration:</b>
+  <%=h @video.average_episode_duration %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%=h @video.desc %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%=h @video.genre %>
+</p>
+
+<p>
+  <b>Is Film:</b>
+  <%=h @video.is_film %>
+</p>
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<% if (!@video.is_film) %>
+  <%= link_to 'Add episode', @video.id.to_s + "/add_episode/" %> |
+<% end %>
+<%= link_to 'Back', videos_path %>
