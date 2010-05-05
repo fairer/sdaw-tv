@@ -10,7 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :plannings
   map.connect 'planning/:action', :controller => 'plannings'
   map.resources :videos
-  map.resources :posts
+  map.resources :posts, :has_many => :comments
+  map.resources :comments, :belongs_to => :posts
   map.add_episode 'videos/:id/add_episode', :controller => 'videos', :action => 'add_episode'
 
   # The priority is based upon order of creation: first created -> highest priority.
