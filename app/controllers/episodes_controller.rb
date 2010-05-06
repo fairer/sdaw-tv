@@ -56,7 +56,7 @@ class EpisodesController < ApplicationController
     file = params[:file]
     dir = 'public/videos/series/' + Video.find(params[:episode][:serie]).safe_name +
       '/season' + params[:episode][:season] + '/'
-    if !FileUtils.directory?(dir)
+    if !(File.directory?(dir))
       FileUtils.mkdir(dir)
     end
     FileUtils.copy file.path, dir + 'episode' + params[:episode][:episode_number] + '.flv'
