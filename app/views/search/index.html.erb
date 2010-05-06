@@ -47,8 +47,6 @@
        <% else %>
          <% e = l-1 %>
        <% end %>
-
-
        <% if l != 0 %>
 	 <% if @series %>
 	   <!-- Affichage par episodes -->
@@ -63,12 +61,12 @@
 		   <% t = @epi[i][4].to_s %>
 		 <% end %>
 		 <%= @epi[i][3] %>x<%= t %><br/>
-		 <!-- A tester -->
 	         <% pl = false%>
+		 <% date = Time.now %>
 	         <% @pla.each do |lt|%>
-	           <% if (lt[0].to_i == @answer[i][7]) &&
-		         (lt[1].to_i == @answer[i][3]) &&
-		         (lt[2].to_i == @answer[i][4])%>
+	           <% if ((lt[0].to_i == @answer[0][0]) &&
+		          (lt[1].to_i == @epi[i][3]) &&
+		          (lt[2].to_i == @epi[i][4]))%>
 		     <% pl = true %>
 		     <% date = lt[3] %>
 		   <% end %>
@@ -80,6 +78,7 @@
 		       <% if date.month == now.month %>
 		         <% if date.day == now.day %>
 		           programmed for <%= date.hour %>:<%= date.min %>
+			   <br/>
 		         <% else %>
 			   <% if date.day > now.day %>
 		             Programmed for
@@ -121,7 +120,6 @@
 		     <% end %>
 		   </span>
 	         <% end %>
-		 <!-- Fin a tester -->
 		 <% if @epi[i][2] != "" %>
 		   <%= @epi[i][2] %><br/>
 		 <% else %>
@@ -141,6 +139,7 @@
 		   <% end %>
 		   <%= (@epi[i][8] / 60) % 60 %> minutes
 		   <%=  @epi[i][8] % 60 %> seconds
+		   <br/>
 		 </span>
 	       </div><br/>
 	     <% end %>
@@ -163,11 +162,9 @@
 	   <% date = Time.now %>
 	   <% @answer = @answer.sort_by {|res| res[res.length - 1]} %>
 	   <% for i in start..e do %>
-	   <!--et_serie(line.id)-->
 	     <div>
 	       <%= @answer[i][1] %> - <%= @answer[i][6] %>
 	       [<% if @answer[i][2] %>Film<% else %>S&eacute;rie<% end %>]<br/>
-
 	       <!-- Affichage planning -->
 	       <% pl = false%>
 	       <% e = 0 %>
@@ -198,6 +195,7 @@
 		     <% if date.month == now.month %>
 		       <% if date.day == now.day %>
 		         programmed for <%= date.hour %>:<%= date.min %>
+		         <br/>
 		       <% else %>
 		         <% if date.day > now.day %>
 		           Programmed for
@@ -239,7 +237,6 @@
 		   <% end %>
 		 </span>
 	       <% end %>
-
 	       <% if @answer[i][3] != "" %>
 	         <%= @answer[i][3] %><br/>
 	       <% else %>
@@ -263,6 +260,7 @@
 	       <% end %>
 	       <%= (@answer[i][5] / 60) % 60%> minutes
 	       <%= @answer[i][5] % 60 %> seconds
+	       <br/>
 	     </span>
 	   </div><br/>
 	 <% end %>
