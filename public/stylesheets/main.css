@@ -1,201 +1,159 @@
-body
+*
 {
-	width: 994px;
-	margin: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: url("background.png") red;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 a
 {
-	text-decoration: none;
+    color: #048bbf;
+    text-decoration: none;
 }
 
 a:hover
 {
-	text-decoration: underline;
-}
-
-a:focus
-{
-	color: purple;
+    color: #4bf2f9;
 }
 
 a img
 {
-    border: none;
+    border: 0;
 }
 
-#header
+#content
 {
-	width: 994px;
-	height: 100px;
+    width: 1517px;
+    height: 1500px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-#upper_right
+#left_col
 {
-	width: 250px:
-	float: right;
-	padding: 6px;
-	width: 250px;
-	height: 40px;
+    width: 667px;
+    height: 100%;
+    float: left;
+    background: url('../images/lib.png') bottom right no-repeat;
 }
 
-#upper_left
+#left_col > div
 {
-	width: 744px;
-}
-
-#title
-{
-	text-align: center;
-}
-
-#search_tool
-{
-	float: right;
-	width: 250px;
-	height: 40px;
-	font-size: 1.4em;
-
-}
-
-#search
-{
+    width: 490px;
     float: right;
+    padding-top: 60px;
 }
 
-#breaking_news
+.etagere
 {
-	padding-left: 4px;
+    width: 415px;
+    height: 142px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    overflow: auto;
+    color: white;
 }
 
-#breaking_news_title
+    .etagere img
+    {
+        float: left;
+        margin-right: 20px;
+    }
+
+    .etagere h2
+    {
+        margin-top: 10px;
+        text-shadow: 0px 0px 8px #FFFFFF;
+        color:black;
+    }
+
+#search_tool input[type=text]
 {
-	color: rgb(200,20,30);
-	font-size: 1.8em;
-	font-family: Trebuchet MS, serif;
-	text-decoration: underline;
+    width: 160px;
+    height: 20px;
 }
 
-#breaking_news_text
+#right_col
 {
-	font-size: 1.6em;
-	font-family: Arial, Courier News, serif;
-	overflow: hidden;
+    width: 830px;
+    height: 100%;
+    float: left;
+    background: url('../images/tv.png') bottom left no-repeat;
 }
 
-#past_news
+#logo
 {
-	margin-top: 4px;
-	padding-left: 20px;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
 }
 
-#past_news_text
+#news
 {
-	font-size: 1.2em;
+    width: 60%;
+    height: 150px;
+    margin: auto;
+    background: url('../images/news.png') no-repeat;
+    padding-left: 25%;
+    padding-top: 50px
 }
 
-#right_up
+#screen
 {
-	width: 600px;
-	float: right;
-	margin: right;
-	margin-right: 20px;
-	padding: 0px;
+    width: 640px;
+    height: 360px;
+    margin: auto;
+    margin-top: 30px;
 }
 
-#right_bot
-{
-	float: right;
-	width: 600px;
-	padding: 20px;
-	margin-top: 40px;
-}
-
-#left
-{
-	width: 394px;
-}
-
-#left_up
-{
-	margin-top: 80px;
-	margin-bottom: 30px;
-	margin-left: 10px;
-	font-size: 1.6em;
-}
-
-#left_bot
-{
-	padding-left: 40px;
-	padding-top: 40px;
-}
-
-#footer
-{
-	text-align: center;
-}
-
-.italic
-{
-	font-style: italic;
-}
-
-#results
-{
-    border: 1px solid black;
-    margin-left: 10px;
-    padding: 0 20px;
-}
-
-#results em
-{
-    margin-left: 10px;
-}
+    #screen object
+    {
+        margin: auto;
+    }
 
 #progress_bar
 {
-    width: 392px;
-    height: 13px;
-    float: left;
-    border-top:    1px solid gray;
-    border-bottom: 1px solid gray;
-    padding: 1px 4px;
-    margin: 0;
+    width: 644px;
+    height: 2px;
+    margin: auto;
+    margin-top: 15px;
+    padding-top: 1px;
 }
 
-#progress_bar #progress
-{
-    width: 0;
-    height: 13px;
-    background: url('../images/progress.png') repeat-x;
-}
+    #progress
+    {
+        width: 0px;
+        height: 2px;
+        background: #1db0d1;
+    }
 
 #player_toolbar
 {
-    width: 480px;
-}
-
-#player_toolbar img
-{
-    width: 17px;
+    width: 600px;
     height: 17px;
-    float: left;
+    margin: auto;
+    margin-top: 15px;
+    color: silver;
+    font-size: 10px;
+    padding-top: 3px;
 }
 
-#time
-{
-    height: 13px;
-    float: right;
-    border: 1px solid gray;
-    padding: 1px 3px;
-    font-size: 8px;
-    overflow: hidden;
-}
+    #player_toolbar div
+    {
+        float: left;
+    }
+
+    #player_toolbar div#time
+    {
+        float: right;
+    }
+
+    #player_toolbar div#button
+    {
+        margin-right: 10px;
+        margin-top: -3px;
+        cursor: pointer;
+    }
 
 .research
 {
@@ -210,4 +168,31 @@ a img
 .now
 {
     color: red;
+}
+
+#ad_banner
+{
+    width: 700px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.ad_square
+{
+    width: 300px;
+    height: 250px;
+    margin-top: 20px;
+    margin-left: 90px;
+    -webkit-box-shadow: 0px 0px 7px #000;
+    -moz-box-shadow: 0px 0px 7px #000;
+    box-shadow: 0px 0px 7px #000;
+    border: 5px solid white;
+}
+
+.ad_horizontal
+{
+    -webkit-box-shadow: 0px 0px 7px #000;
+    -moz-box-shadow: 0px 0px 7px #000;
+    box-shadow: 0px 0px 7px #000;
+    border: 5px solid white;
 }
