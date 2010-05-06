@@ -196,3 +196,17 @@ a img
     box-shadow: 0px 0px 7px #000;
     border: 5px solid white;
 }
+
+#light
+{
+    vertical-align: middle;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.rideau
+{
+    position: absolute;
+    z-index: 9999;
+    background: black;
+}

@@ -119,3 +119,91 @@ $$('.etagere').each(function (item) {
         item.setStyle({'background': 'rgba(0,0,0,0)'});
     });
 });
+
+function findPosX(obj)
+{
+var curleft = 0;
+if(obj.offsetParent)
+    while(1)
+    {
+      curleft += obj.offsetLeft;
+      if(!obj.offsetParent)
+        break;
+      obj = obj.offsetParent;
+    }
+else if(obj.x)
+    curleft += obj.x;
+return curleft;
+}
+
+function findPosY(obj)
+{
+var curtop = 0;
+if(obj.offsetParent)
+    while(1)
+    {
+      curtop += obj.offsetTop;
+      if(!obj.offsetParent)
+        break;
+      obj = obj.offsetParent;
+    }
+else if(obj.y)
+    curtop += obj.y;
+return curtop;
+}
+
+
+function lights_off(){
+    $('rideau1').setStyle({'background': 'black',
+    'width': '100%',
+    'height': findPosY($('player')) + 'px',
+    'display': 'none'});
+    $('rideau1').appear({from:0,to:0.97});
+
+    $('rideau2').setStyle({'background': 'black',
+    'width': findPosX($('player')) + 'px',
+    'height': 360 + 60 + 'px',
+    'top': findPosY($('player')) + 'px',
+    'display': 'none'});
+    $('rideau2').appear({from:0,to:0.97});
+
+    $('rideau3').setStyle({'background': 'black',
+    'width': document.body.clientWidth - (findPosX($('player')) + 640) + 'px',
+    'height': 360 + 60 + 'px',
+    'top': findPosY($('player')) + 'px',
+    'left':(findPosX($('player')) + 640) + 'px',
+    'display': 'none'});
+    $('rideau3').appear({from:0,to:0.97});
+
+    $('rideau4').setStyle({'background': 'black',
+    'width': '100%',
+    'height': (1500 - (findPosY($('player')) + 360 - 60)) + 'px',
+    'top': (findPosY($('player')) + 360 + 60) + 'px',
+    'display': 'none'});
+    $('rideau4').appear({from:0,to:0.97});
+}
+
+function lights_on(){
+    $('rideau1').appear({from:0.97,to:0});
+    $('rideau2').appear({from:0.97,to:0});
+    $('rideau3').appear({from:0.97,to:0});
+    $('rideau4').appear({from:0.97,to:0});
+    var timer = setTimeout(function () {
+        $('rideau1').setStyle({'width': 0, 'height': 0});
+        $('rideau2').setStyle({'width': 0, 'height': 0});
+        $('rideau3').setStyle({'width': 0, 'height': 0});
+        $('rideau4').setStyle({'width': 0, 'height': 0});
+        clearTimeout(timer);
+    }, 1000);
+}
+
+$('light').observe('click', function (){
+    if ($('light').src.search('lightbulb.png') > -1){
+        $('light').src = $('light').src.replace(/lightbulb.png/i, 'lightbulb_off.png');
+        lights_off();
+    }
+    else{
+        $('light').src = $('light').src.replace(/lightbulb_off.png/i, 'lightbulb.png');
+        lights_on();
+    }
+});
