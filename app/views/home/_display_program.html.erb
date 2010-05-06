@@ -1,6 +1,6 @@
-<% session['temp'] = session['temp'] + 1 %>
 <div class="program_video">
-   hello
-   <%= session['temp'] %>
-   <%= display_program[:name] %><br/>
+   <span class="p_hour"><%= display_program[:hour] %></span>
+   <span class="p_name"><%= display_program[:name] %></span>
+   <span class="p_infos"><%= display_program[:infos] %></span>
+   <br/>
 </div>

@@ -1,3 +1,3 @@
 page.hide "select_moment"
 page.insert_html :bottom, "selection", " - " + "[" + @moment + "]"
-page.insert_html :top, "right_bot", :partial => "display_program", :collection => session['collection']
+page.insert_html :top, "program", :partial => "display_program", :collection => @collection
