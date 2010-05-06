@@ -17,8 +17,9 @@
 				<div id="breaking_news">
 					<p>
 						<span id="breaking_news_title">Breaking news :</span>
-						<span id="breaking_news_text">SDAW-TV <span class="italic">in development</span> !</span>
-                                                <a href="http://localhost:3000/posts">(...)</a>
+						<span id="breaking_news_text"><%= Post.find(:last).title %></span>
+                                                <%=  link_to "(...)", :controller => "posts", :action => "index" %>
+
 					</p>
 				</div>
 			</div>
