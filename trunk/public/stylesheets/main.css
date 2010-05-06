@@ -210,3 +210,23 @@ a img
     z-index: 9999;
     background: black;
 }
+
+.p_hour
+{
+	font-family: Arial, Courier News, serif;
+	font-size: small;	
+	color: #5e5e5e;
+}
+
+.p_name
+{
+	font-family: "Comic Sans MS", "Trebuchet MS", Georgia, serif;
+	font-size: medium;
+}
+
+.p_infos
+{
+	font-family: Arial, Courier News, serif;
+	font-size: small;
+	color: #5e5e5e;
+}

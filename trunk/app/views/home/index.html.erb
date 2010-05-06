@@ -1,4 +1,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<<<<<<< .mine
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+   <head>
+       <title><%= @body_title || "SDAW TV is on his way..." %></title>
+ 		<%= stylesheet_link_tag 'main' %>
+ 		<%= javascript_include_tag :defaults %>
+      <%= javascript_include_tag 'prototype' %>
+		 
+   </head>
+   <body<%= @body_extras %>>
+		<div id="header">
+			<%= image_tag "sdaw_header.png" %>
+		</div>
+		<div id="content">
+			<div id="upper_left">
+				<div id="breaking_news">
+					<p>
+						<span id="breaking_news_title">Breaking news :</span>
+						<span id="breaking_news_text">SDAW-TV <span class="italic">in development</span> !</span>
+						<a href="javascript:open_window('news.html');">(...)</a>
+					</p>
+				</div>
+			</div>
+			<div id="upper_right">
+				<div id="search_tool">
+					<% form_tag(:controller=>"search", :action => "index", :method => "post") do %>
+					<%= text_field_tag :q ,:research, :size=>"15" %>
+					<%= submit_tag("Search") %>
+					<% end %>
+				</div>
+			</div>
+			<div id="right">
+				<div id="right_up">
+                                  <object id="player" data="player.swf" type="application/x-shockwave-flash"
+                                          width="480" height="360">
+                                    <param name="movie" value="player.swf" />
+                                    <param name="wmode" value="transparent" />
+=======
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
     <title><%= @body_title || "SDAW TV is on his way..." %></title>
@@ -38,6 +76,7 @@
           }
           });
           }
+>>>>>>> .r63
 
           </script>
           <span id="chat_menu">
@@ -62,6 +101,24 @@
           printChat();
           </script>
 
+<<<<<<< .mine
+                                  <p><span id="now"></span><br/></p>
+				</div>
+				<div id="right_bot">
+					<div id="program">
+					</div>
+					<%= image_tag "fake_pub2.jpg" %>
+				</div>
+			</div>
+			<div id="left">
+				<div id="left_up">
+					
+					<%= image_tag "right_arrow.png" %>
+					View the
+					<%= link_to_function("chat") do |page|
+			 			page.visual_effect(:fade, "left_up")
+			 			end
+=======
           </span>
           <%= update_page_tag do |page|
           page.hide "chat_replacement"
@@ -109,7 +166,73 @@
 									:url => {:action => 'update_selection_day'},
 									:frequency => 1,
 									:with => "'selected_day=' + escape(value)"
+>>>>>>> .r63
 					%>
+<<<<<<< .mine
+					<%= image_tag "chat.png" %>
+				</div>
+				<div id="left_mid">
+					<%= image_tag "fake_pub1.jpg" %>
+				</div>
+				<div id="left_bot">
+					<div id="select_program_icon">
+						<%= link_to_function (image_tag "book_final.png") do |page|
+							page.visual_effect(:appear, "select_day")
+							page.visual_effect(:appear, "select_reset")
+							page.hide "select_program_icon"
+						end %>
+					</div>
+					<div id="selection">
+					</div>
+					<div id="select_day">
+							<label>Select a day:</label>
+							<br />
+							<%= select ("profile", "day", @day_list) %>
+					</div>
+					<div id="select_period">
+						<label>Select a period:</label>
+						<br />
+						<%= select ("profile", "period", @period_list) %>
+					</div>
+					<div id="select_moment">
+						<label>Select a moment:</label><br/>
+						<%= select ("profile", "moment", @moment_list) %>
+					</div>
+					<div id="select_reset">
+						<%= link_to_function ("Reset") do |page|
+							page.hide "select_period"
+							page.hide "select_moment"
+							page.hide "selection"
+							page.replace_html "selection", ""
+							page.replace_html "program", ""
+							page.visual_effect(:appear, "select_day")
+							session['day'] = ""
+							session['period'] = ""
+							session['moment'] = ""
+						end %>
+					</div>
+					<%= observe_field 'profile_day',
+									:url => {:action => 'update_selection_day'},
+									:frequency => 2,
+									:with => "'selected_day=' + escape(value)"
+					%>
+					<%= observe_field 'profile_period',
+									:url => {:action => 'update_selection_period'},
+									:frequency => 2,
+									:with => "'selected_period=' + escape(value)"
+					%>
+					<%= observe_field 'profile_moment',
+									:url => {:action => 'update_selection_moment'},
+									:frequency => 2,
+									:with => "'selected_moment=' + escape(value)"
+					%>
+					<%= update_page_tag do |page|
+						page.hide "select_day"
+						page.hide "selection"
+						page.hide "select_moment"
+						page.hide "select_period"
+						page.hide "select_reset"
+=======
 					<%= observe_field 'profile_period',
 									:url => {:action => 'update_selection_period'},
 									:frequency => 1,
@@ -126,6 +249,7 @@
 						page.hide "select_moment"
 						page.hide "select_period"
 						page.hide "select_reset"
+>>>>>>> .r63
 					end %>
 			<div id="right_bot">
 				</div>
