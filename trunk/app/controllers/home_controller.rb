@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 		@period = session['period']
 		@day = session['day']
 		temp = 0
-		@collection = [{:hour => "", :name =>"", :infos => ""}]
+		@collection = [{:hour => "", :name =>"Nothing planned", :infos => ""}]
 		split = []
 		temp_collection = Planning.find :all
 		if (temp_collection != [])
@@ -55,7 +55,12 @@ class HomeController < ApplicationController
 					else
 						eps = Episode.find(:all, :conditions => {:serie => id_video, :season => num_saison, :episode_number => num_eps})
 						if (eps != [])
-							@collection[temp] = {:hour => final_hour, :name => aux[0].name + " ", :infos => eps[0].season.to_s + " " + eps[0].episode_number.to_s}
+							aux = Video.find(:all, :conditions => {:id => eps[0].serie})
+							if (aux != [])
+								@collection[temp] = {:hour => final_hour, :name => aux[0].name, :infos => "season " + eps[0].season.to_s + " episode number " + eps[0].episode_number.to_s}
+							else
+								@collection[temp] = {:hour => "", :name => "No such eps.", :infos => ""}
+							end
 						else
 							@collection[temp] = {:hour => "", :name => "No such eps.", :infos => ""}
 						end
@@ -65,7 +70,7 @@ class HomeController < ApplicationController
 			end
 			@collection = @collection.sort_by {|res| res[:hour]}
 		else
-			@collection = [:hour => "", :name => "No video", :infos => ""]
+			@collection = [:hour => "", :name => "Nothing planned", :infos => ""]
 		end
 	end
 
