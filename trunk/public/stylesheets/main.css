@@ -51,18 +51,18 @@ a img
     color: white;
 }
 
-    .etagere img
-    {
-        float: left;
-        margin-right: 20px;
-    }
+.etagere img
+{
+    float: left;
+    margin-right: 20px;
+}
 
-    .etagere h2
-    {
-        margin-top: 10px;
-        text-shadow: 0px 0px 8px #FFFFFF;
-        color:black;
-    }
+.etagere h2
+{
+    margin-top: 10px;
+    text-shadow: 0px 0px 8px #FFFFFF;
+    color:black;
+}
 
 #search_tool input[type=text]
 {
@@ -108,10 +108,10 @@ a img
     margin-top: 30px;
 }
 
-    #screen object
-    {
-        margin: auto;
-    }
+#screen object
+{
+    margin: auto;
+}
 
 #progress_bar
 {
@@ -122,12 +122,12 @@ a img
     padding-top: 1px;
 }
 
-    #progress
-    {
-        width: 0px;
-        height: 2px;
-        background: #1db0d1;
-    }
+#progress
+{
+    width: 0px;
+    height: 2px;
+    background: #1db0d1;
+}
 
 #player_toolbar
 {
@@ -140,22 +140,22 @@ a img
     padding-top: 3px;
 }
 
-    #player_toolbar div
-    {
-        float: left;
-    }
+#player_toolbar div
+{
+    float: left;
+}
 
-    #player_toolbar div#time
-    {
-        float: right;
-    }
+#player_toolbar div#time
+{
+    float: right;
+}
 
-    #player_toolbar div#button
-    {
-        margin-right: 10px;
-        margin-top: -3px;
-        cursor: pointer;
-    }
+#player_toolbar div#button
+{
+    margin-right: 10px;
+    margin-top: -3px;
+    cursor: pointer;
+}
 
 .research
 {
@@ -170,6 +170,7 @@ a img
 .now
 {
     color: red;
+    font-size: 12px;
 }
 
 #ad_banner
