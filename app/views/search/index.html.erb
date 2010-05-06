@@ -127,7 +127,8 @@
 		 <% end %>
 		 <% if @epi[i][5] != "" %>
 		   <% @epi[i][5].split.each do |tag| %>
-		     <a href="/search?method=post&q=<%= tag %>">[<%= tag %>]
+		     <% tag = tag + " in "%>
+		     <a href="/search?method=post&q=<%= tag + @epi[i][7] %>">[<%= tag %>]
 		     </a>
 		   <% end %><br/>
 		 <% else %>
@@ -149,7 +150,7 @@
 	     <% if l > 0 %>
 	       Recherche associ&eacute;e &agrave; <b><%= @params %></b><br/>
 	       <% for i in 1..l do %>
-	         <% if @answer[i][2] %>
+	         <% if !@answer[i][2] %>
 		   <a href="/search?method=post&q=<%= @answer[i][7] %>">
 		 <% else %>
 		   <a href="/search?method=post&q=<%= @similar_research +
