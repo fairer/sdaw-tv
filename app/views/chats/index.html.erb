@@ -1,7 +1,7 @@
 
 
 <% remote_form_for [@chat, Chat.new] do |f| %>
-<p>
+<p id="chat_form">
      <%= f.label :login %>
     <%= f.text_field :login %><br />
    <%= f.label :message %>
