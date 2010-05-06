@@ -1,84 +1,77 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
-   <head>
-       <title><%= @body_title || "SDAW TV is on his way..." %></title>
- 		<%= stylesheet_link_tag 'main' %>
- 		<%= javascript_include_tag :defaults %>
-      <%= javascript_include_tag 'prototype' %>
-		 
-   </head>
-   <body<%= @body_extras %>>
-		<div id="header">
-			<h1 id="title">Sit Down And Watch !</h1>
-		</div>
-		<div id="content">
-			<div id="upper_left">
-				<div id="breaking_news">
-					<p>
-						<span id="breaking_news_title">Breaking news :</span>
-						<span id="breaking_news_text">SDAW-TV <span class="italic">in development</span> !</span>
-						<a href="javascript:open_window('news.html');">(...)</a>
-					</p>
-				</div>
-			</div>
-			<div id="upper_right">
-				<div id="search_tool">
-					<% form_tag(:controller=>"search", :action => "index", :method => "post") do %>
-					<%= text_field_tag :q ,:research, :size=>"15" %>
-					<%= submit_tag("Search") %>
-					<% end %>
-				</div>
-			</div>
-			<div id="right">
-				<div id="right_up">
-                                  <object id="player" data="player.swf" type="application/x-shockwave-flash"
-                                          width="480" height="360">
-                                    <param name="movie" value="player.swf" />
-                                    <param name="wmode" value="transparent" />
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title><%= @body_title || "SDAW TV is on his way..." %></title>
+    <%= stylesheet_link_tag 'main' %>
+    <%= stylesheet_link_tag 'home' %>
+    <%= javascript_include_tag :defaults %>
+  </head>
+  <body<%= @body_extras %>>
+    <div id="content">
+      <div id="left_col"><div>
+        <div id="search_tool" class="etagere">
+          <br/><br/>
+          <h2>Research :</h2>
+          <% form_tag(:controller=>"search", :action => "index", :method => "post") do %>
+          <%= text_field_tag :q , :research, :size=>"15" %>
+          <%= submit_tag("Search") %>
+          <% end %>
+        </div>
+        <div class="etagere">
+          <span id="chat">
+            <br/><br/>
+          <%= image_tag "bulles.png" %><br/>
+            <h2>View the
+          <%= link_to_function("chat") do |page|
+          page.hide "chat"
+          page.visual_effect(:appear, "chat_menu")
+          page.visual_effect(:appear, "chat_replacement")
+          end
+          %>
+            </h2></span>
+          <script type="text/javascript">
+          function printChat () {
+          new Ajax.Request('/chats/index', {
+          onSuccess: function(response) {
+          var res = response.responseText;
+          $("lol").innerHTML = res;
+          }
+          });
+          }
 
-                                    <param name="allowFullscreen" value="true" />
-                                    <param name="allowScriptAccess" value="always" />
-                                    <param name="quality" value="best" />
-                                    <param name="scale" value="noscale" />
-                                    <p>Macromedia Flash Player 8 is required in order to use this site</p>
-                                  </object><br/>
+          </script>
+          <span id="chat_menu">
+          <%= link_to_function("Close chat:") do |page|
+          page.hide "chat_replacement"
+          page.hide "chat_menu"
+          page.visual_effect(:appear, "chat")
+          end
+          %>
+          <%= link_to_function("Refresh") do |page|
+          page.replace_html "chat_replacement", "<div id=\"lol\" style=\"overflow:auto; height:556px;width:250px;\"></div>
+          <script type=\"text/javascript\">
 
-                                  <div id="player_toolbar">
-                                    <%= image_tag 'play.png', :id => 'play' %>
-                                    <%= image_tag 'pause.png', :id => 'pause' %>
-                                    <div id="progress_bar">
-                                      <div id="progress"></div>
-                                    </div>
+          printChat();
+          </script>"
+          end %>
+          </span>
+          <span id="chat_replacement">
+          <div id="lol" style="overflow:auto; height:556px;width:250px;">Error : Getting the chat</div>
+          <script type="text/javascript">
 
-                                    <div id="time">
-                                      <span id="progress_time">00:00</span> |
-                                      <span id="total_time">00:00</span>
-                                    </div>
-                                  </div>
+          printChat();
+          </script>
 
-                                  <p><span id="now"></span><br/></p>
-				</div>
-				<div id="right_bot">
-					<%= image_tag "pub2.png" %>
-				</div>
-			</div>
-			<div id="left">
-				<div id="left_up">
-					
-					<%= image_tag "right_arrow.png" %>
-					View the
-					<%= link_to_function("chat") do |page|
-			 			page.visual_effect(:fade, "left_up")
-			 			end
-					%>
-					<%= image_tag "chat.png" %>
-				</div>
-				<div id="left_mid">
-					<%= image_tag "pub1.png" %>
-				</div>
-				<div id="left_bot">
-					<div id="select_program_icon">
-						<%= link_to_function (image_tag "book_final.png") do |page|
+          </span>
+          <%= update_page_tag do |page|
+          page.hide "chat_replacement"
+          page.hide "chat_menu"
+          end
+          %>
+        </div>
+          <div class="etagere">
+            <div id="select_program_icon">
+						<%= link_to_function (image_tag "program.png") do |page|
 							page.visual_effect(:appear, "select_day")
 							page.visual_effect(:appear, "select_reset")
 							page.hide "select_program_icon"
@@ -134,10 +127,59 @@
 						page.hide "select_period"
 						page.hide "select_reset"
 					end %>
+			<div id="right_bot">
 				</div>
-			</div>		
-		</div>
-   </body>
+          </div>
+        <%= image_tag 'ad_square.jpg', :class => "ad_square" %>
+      </div></div>
+      <div id="right_col">
+        <div id="logo">
+          <h1><img src="images/logo.png" alt="SdaW-tv" /></h1>
+        </div>
+        <div id="news">
+          <h2>Breaking news</h2>
+          <p><%= Post.find(:last).title %>
+          <%=  link_to "(...)", :controller => "posts", :action => "index" %></p>
+        </div>
+        <div id="screen">
+          <object id="player" data="player.swf" type="application/x-shockwave-flash"
+                  width="640" height="360">
+            <param name="movie" value="player.swf" />
+            <param name="wmode" value="opaque" />
+            <param name="bgcolor" value="#000000" />
+            <param name="allowFullscreen" value="true" />
+            <param name="allowScriptAccess" value="always" />
+            <param name="quality" value="autohigh" />
+            <param name="scale" value="noscale" />
+            <p>Macromedia Flash Player 8 is required in order to use this site</p>
+          </object>
+        </div>
+        <div id="progress_bar">
+          <div id="progress"></div>
+        </div>
+        <div id="player_toolbar">
+          <div id="button">
+            <%= image_tag 'play.png', :id => 'play' %>
+            <%= image_tag 'pause.png', :id => 'pause' %>
+          </div>
 
-                <%= javascript_include_tag 'player' %>
+          <div id="now">
+            OFF
+          </div>
+
+          <div id="time">
+            <span id="progress_time">00:00</span> |
+            <span id="total_time">00:00</span>
+          </div>
+        </div>
+        
+        <div id="ad_banner">
+          <%= image_tag 'ad_horizontal.jpg', :class => "ad_horizontal" %>
+        </div>
+
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'player'  %>
+  </body>
 </html>
