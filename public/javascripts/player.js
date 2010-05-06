@@ -155,9 +155,11 @@ return curtop;
 
 function lights_off(){
     $('rideau1').setStyle({'background': 'black',
-    'width': '100%',
+    'width': $('content').offsetWidth + 130 + 'px',
     'height': findPosY($('player')) + 'px',
-    'display': 'none'});
+    'display': 'none',
+    'top': 0,
+    'left':0});
     $('rideau1').appear({from:0,to:0.97});
 
     $('rideau2').setStyle({'background': 'black',
@@ -168,7 +170,7 @@ function lights_off(){
     $('rideau2').appear({from:0,to:0.97});
 
     $('rideau3').setStyle({'background': 'black',
-    'width': document.body.clientWidth - (findPosX($('player')) + 640) + 'px',
+    'width': '130px',
     'height': 360 + 60 + 'px',
     'top': findPosY($('player')) + 'px',
     'left':(findPosX($('player')) + 640) + 'px',
@@ -176,7 +178,7 @@ function lights_off(){
     $('rideau3').appear({from:0,to:0.97});
 
     $('rideau4').setStyle({'background': 'black',
-    'width': '100%',
+    'width': $('content').offsetWidth + 130 + 'px',
     'height': (1500 - (findPosY($('player')) + 360 - 60)) + 'px',
     'top': (findPosY($('player')) + 360 + 60) + 'px',
     'display': 'none'});
