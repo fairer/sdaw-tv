@@ -23,9 +23,6 @@ a img
 {
     width: 1517px;
     height: 1500px;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 #left_col
@@ -234,4 +231,20 @@ a img
 	font-family: Arial, Courier News, serif;
 	font-size: small;
 	color: #cecece;
+}
+
+#chat_menu img
+{
+    float: none;
+    clear: both;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#chat_form
+{
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
