@@ -82,6 +82,7 @@ $('pause').hide();
 
 // This function is trigered when a video is finished
 function onVideoEnds() {
+    $('now').innerHTML = 'Click the button on the left to start the TV.';
     if (last_vid_type == "video") {
         new Ajax.Request('plannings/clean/');
     }
@@ -102,10 +103,19 @@ function fancy_time(t, l) {
 }
 
 function onVideoProgress(progress, total) {
-    var width = 480 - 17 - $('time').getDimensions().width - 8;
-    var width_progress = progress / total * width;
+    var width_progress = progress / total * 644;
     $('progress_time').innerHTML = fancy_time(progress, 2);
     $('total_time').innerHTML = fancy_time(total, 2);
-    $('progress_bar').setStyle({'width': width + 'px'});
     $('progress').setStyle({'width': width_progress + 'px'});
 }
+
+$('now').innerHTML = 'Click the button on the left to start the TV.';
+
+$$('.etagere').each(function (item) {
+    item.observe('mouseover', function () {
+        item.setStyle({'background': 'rgba(0,0,0,0.8)'});
+    });
+    item.observe('mouseout', function () {
+        item.setStyle({'background': 'rgba(0,0,0,0)'});
+    });
+});

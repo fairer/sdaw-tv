@@ -38,25 +38,28 @@
                                     <param name="movie" value="player.swf" />
                                     <param name="wmode" value="transparent" />
 
-                                    <param name="allowFullscreen" value="true" />
-                                    <param name="allowScriptAccess" value="always" />
-                                    <param name="quality" value="best" />
-                                    <param name="scale" value="noscale" />
-                                    <p>Macromedia Flash Player 8 is required in order to use this site</p>
-                                  </object><br/>
+          </script>
+          <span id="chat_menu">
+          <%= link_to_function("Close chat:") do |page|
+          page.hide "chat_replacement"
+          page.hide "chat_menu"
+          page.visual_effect(:appear, "chat")
+          end
+          %>
+          <%= link_to_function("Refresh") do |page|
+          page.replace_html "chat_replacement", "<div id=\"lol\" style=\"overflow:auto; height:556px;width:250px;\"></div>
+          <script type=\"text/javascript\">
 
-                                  <div id="player_toolbar">
-                                    <%= image_tag 'play.png', :id => 'play' %>
-                                    <%= image_tag 'pause.png', :id => 'pause' %>
-                                    <div id="progress_bar">
-                                      <div id="progress"></div>
-                                    </div>
+          printChat();
+          </script>"
+          end %>
+          </span>
+          <span id="chat_replacement">
+          <div id="lol" style="overflow:auto; height:556px;width:250px;">Error : Getting the chat</div>
+          <script type="text/javascript">
 
-                                    <div id="time">
-                                      <span id="progress_time">00:00</span> |
-                                      <span id="total_time">00:00</span>
-                                    </div>
-                                  </div>
+          printChat();
+          </script>
 
                                   <p><span id="now"></span><br/></p>
 				</div>
@@ -182,10 +185,59 @@
 						page.hide "select_period"
 						page.hide "select_reset"
 					end %>
+			<div id="right_bot">
 				</div>
-			</div>		
-		</div>
-   </body>
+          </div>
+        <%= image_tag 'ad_square.jpg', :class => "ad_square" %>
+      </div></div>
+      <div id="right_col">
+        <div id="logo">
+          <h1><img src="images/logo.png" alt="SdaW-tv" /></h1>
+        </div>
+        <div id="news">
+          <h2>Breaking news</h2>
+          <p><%= Post.find(:last).title %>
+          <%=  link_to "(...)", :controller => "posts", :action => "index" %></p>
+        </div>
+        <div id="screen">
+          <object id="player" data="player.swf" type="application/x-shockwave-flash"
+                  width="640" height="360">
+            <param name="movie" value="player.swf" />
+            <param name="wmode" value="opaque" />
+            <param name="bgcolor" value="#000000" />
+            <param name="allowFullscreen" value="true" />
+            <param name="allowScriptAccess" value="always" />
+            <param name="quality" value="autohigh" />
+            <param name="scale" value="noscale" />
+            <p>Macromedia Flash Player 8 is required in order to use this site</p>
+          </object>
+        </div>
+        <div id="progress_bar">
+          <div id="progress"></div>
+        </div>
+        <div id="player_toolbar">
+          <div id="button">
+            <%= image_tag 'play.png', :id => 'play' %>
+            <%= image_tag 'pause.png', :id => 'pause' %>
+          </div>
 
-                <%= javascript_include_tag 'player' %>
+          <div id="now">
+            OFF
+          </div>
+
+          <div id="time">
+            <span id="progress_time">00:00</span> |
+            <span id="total_time">00:00</span>
+          </div>
+        </div>
+        
+        <div id="ad_banner">
+          <%= image_tag 'ad_horizontal.jpg', :class => "ad_horizontal" %>
+        </div>
+
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'player'  %>
+  </body>
 </html>
