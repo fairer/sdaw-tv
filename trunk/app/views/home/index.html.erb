@@ -70,7 +70,7 @@
           %>
         </div>
           <div class="etagere">
-            <div id="select_program_icon">
+            	<div id="select_program_icon">
 						<%= link_to_function (image_tag "program.png") do |page|
 							page.visual_effect(:appear, "select_day")
 							page.visual_effect(:appear, "select_reset")
@@ -107,17 +107,17 @@
 					</div>
 					<%= observe_field 'profile_day',
 									:url => {:action => 'update_selection_day'},
-									:frequency => 1,
+									:frequency => 2,
 									:with => "'selected_day=' + escape(value)"
 					%>
 					<%= observe_field 'profile_period',
 									:url => {:action => 'update_selection_period'},
-									:frequency => 1,
+									:frequency => 2,
 									:with => "'selected_period=' + escape(value)"
 					%>
 					<%= observe_field 'profile_moment',
 									:url => {:action => 'update_selection_moment'},
-									:frequency => 1,
+									:frequency => 2,
 									:with => "'selected_moment=' + escape(value)"
 					%>
 					<%= update_page_tag do |page|
@@ -127,7 +127,7 @@
 						page.hide "select_period"
 						page.hide "select_reset"
 					end %>
-			<div id="right_bot">
+				<div id="program">
 				</div>
           </div>
         <%= image_tag 'ad_square.jpg', :class => "ad_square" %>
