@@ -73,6 +73,11 @@ a img
     height: 20px;
 }
 
+#search
+{
+    float: right;
+}
+
 #right_col
 {
     width: 830px;
