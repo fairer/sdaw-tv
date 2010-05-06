@@ -1,0 +1,16 @@
+
+
+<% remote_form_for [@chat, Chat.new] do |f| %>
+<p>
+     <%= f.label :login %>
+    <%= f.text_field :login %><br />
+   <%= f.label :message %>
+    <%= f.text_field :body %>
+    
+<%= f.submit "Add Comment" %></p>
+<% end %>
+
+<div id="chats">
+<%= render :partial => @chats %>
+</div>
+

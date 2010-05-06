@@ -1,0 +1,8 @@
+page.insert_html :top, :chats, :partial => @chat
+
+
+ page.replace_html "chat_replacement", "<div id=\"lol\" style=\"overflow:auto; height:556px;width:250px;\"></div>
+                                            <script type=\"text/javascript\">
+
+                                            printChat();
+                                            </script>";
