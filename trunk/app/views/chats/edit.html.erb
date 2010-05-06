@@ -1,0 +1,16 @@
+<h1>Editing chat</h1>
+
+<% form_for(@chat) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @chat %> |
+<%= link_to 'Back', chats_path %>
