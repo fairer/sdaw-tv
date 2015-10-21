@@ -1,0 +1,1 @@
+SDAW-TV (for "Sit Down And Watch" TV) is a webTV allowing the users to watch a constant flow of videos when they have nothing more interesting to do on the Internet.
